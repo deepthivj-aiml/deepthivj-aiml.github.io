@@ -320,7 +320,6 @@
 </div>
 
 <script>
-  // Portfolio data as object
   const portfolioData = {
     summary: document.querySelector('#summary p').innerText,
     experience: Array.from(document.querySelectorAll('#experience ul')).map(ul => ul.innerText).join('\n'),
@@ -335,7 +334,6 @@
   const input = document.getElementById('user-input');
   const sendBtn = document.getElementById('send-btn');
 
-  // Simple LLM-like matching
   function generateResponse(userText) {
     const query = userText.toLowerCase();
     if(query.includes('summary')) return portfolioData.summary;
@@ -345,8 +343,7 @@
     if(query.includes('education') || query.includes('study')) return portfolioData.education;
     if(query.includes('certification')) return portfolioData.certifications;
     if(query.includes('contact') || query.includes('email') || query.includes('phone')) return portfolioData.contact;
-    // fallback: show summary snippet
-    return "I can answer questions about my portfolio. Here's my summary:\n\n" + portfolioData.summary;
+    return "I'm not sure about that. Ask me about summary, experience, skills, projects, education, certifications, or contact.";
   }
 
   function addMessage(text, sender) {
@@ -370,7 +367,6 @@
     if(e.key === 'Enter') sendBtn.click();
   });
 
-  // Fade-in sections
   const sections = document.querySelectorAll('section');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
