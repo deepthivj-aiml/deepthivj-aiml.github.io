@@ -12,6 +12,7 @@
       background: #f8f9fb;
       color: #333;
       line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
     header {
@@ -19,15 +20,40 @@
       color: #fff;
       padding: 40px 20px;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     header h1 { margin: 0; font-size: 2.6rem; }
     header p { font-size: 1.1rem; margin-top: 10px; }
 
+    nav {
+      margin-top: 15px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover { color: #ffeb3b; }
+
     section {
-      padding: 40px 20px;
+      padding: 60px 20px;
       max-width: 960px;
       margin: auto;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     h2 {
@@ -35,6 +61,7 @@
       border-bottom: 2px solid #1a73e8;
       display: inline-block;
       padding-bottom: 5px;
+      margin-bottom: 20px;
     }
 
     ul {
@@ -50,6 +77,52 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
+    /* Project cards */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .project-card a.button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background: #1a73e8;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .project-card a.button:hover { background: #155ab6; }
+
+    .contact-buttons a {
+      display: inline-block;
+      margin: 5px;
+      padding: 10px 18px;
+      background: #1a73e8;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .contact-buttons a:hover { background: #155ab6; }
+
     footer {
       text-align: center;
       padding: 20px;
@@ -58,17 +131,6 @@
       margin-top: 40px;
     }
 
-    a.button {
-      display: inline-block;
-      padding: 10px 18px;
-      background: #1a73e8;
-      color: white;
-      border-radius: 6px;
-      text-decoration: none;
-      margin-top: 10px;
-    }
-
-    a { color: #1a73e8; }
   </style>
 </head>
 <body>
@@ -76,7 +138,14 @@
 <header>
   <h1>Deepthi Venmanasseril Jainlal</h1>
   <p>AI/ML Engineer • Data Scientist • LLM Developer</p>
-  <p><a href="mailto:deepthivj96@gmail.com" style="color:white;">deepthivj96@gmail.com</a> | Mountain View, CA</p>
+  <nav>
+    <a href="#summary">Summary</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
 <section id="summary">
@@ -136,58 +205,40 @@
 
 <section id="projects">
   <h2>Projects</h2>
-  <ul>
-    <li>
-      <strong>
-        <a href="https://www.kaggle.com/competitions/agents-intensive-capstone-project/writeups/autoevalai-ai-powered-second-hand-vehicle-analysi" target="_blank">
-          Second-Hand Car Inspection Agent (Gemini 2.0 + Gradio)
-        </a>
-      </strong><br>
-      Built an AI-driven multi-image inspection agent for used cars using Gemini 2.0 Flash and MCP architecture.
-    </li>
+  <div class="projects-grid">
+    <div class="project-card">
+      <h3>Second-Hand Car Inspection Agent</h3>
+      <p>Built an AI-driven multi-image inspection agent for used cars using Gemini 2.0 Flash and MCP architecture.</p>
+      <a href="https://www.kaggle.com/competitions/agents-intensive-capstone-project/writeups/autoevalai-ai-powered-second-hand-vehicle-analysi" target="_blank" class="button">View on GitHub</a>
+    </div>
 
-    <li>
-      <strong>
-        <a href="https://github.com/deepthivj-aiml/5-Day-AI-Agents-Intensive-course-Google/blob/main/day-1-multi-agent-systems-workflow-patterns.ipynb" target="_blank">
-          Autonomous AI Blog Writer Agent
-        </a>
-      </strong><br>
-      Built a multi-agent content generation system using OpenAI API and LangChain. Implemented role-based agent collaboration, self-reflection loops, and memory components.
-    </li>
+    <div class="project-card">
+      <h3>Autonomous AI Blog Writer Agent</h3>
+      <p>Built a multi-agent content generation system using OpenAI API and LangChain. Implemented role-based agent collaboration, self-reflection loops, and memory components.</p>
+      <a href="https://github.com/deepthivj-aiml/5-Day-AI-Agents-Intensive-course-Google/blob/main/day-1-multi-agent-systems-workflow-patterns.ipynb" target="_blank" class="button">View on GitHub</a>
+    </div>
 
-    <li>
-      <strong>
-        <a href="https://colab.research.google.com/drive/1M8fm4Ne6PlZbZ9Dxd6gnA-Pmm6VXlofC#scrollTo=stM5AhURMQFe" target="_blank">
-          LLM from Scratch (PyTorch)
-        </a>
-      </strong><br>
-      Implemented a miniature GPT architecture including tokenization, multi-head attention, and AdamW optimization.
-    </li>
+    <div class="project-card">
+      <h3>LLM from Scratch (PyTorch)</h3>
+      <p>Implemented a miniature GPT architecture including tokenization, multi-head attention, and AdamW optimization.</p>
+      <a href="https://colab.research.google.com/drive/1M8fm4Ne6PlZbZ9Dxd6gnA-Pmm6VXlofC#scrollTo=stM5AhURMQFe" target="_blank" class="button">View on GitHub</a>
+    </div>
 
-    <li>
-      <strong>
-        <a href="https://github.com/deepthivj-aiml/Projects-ML/blob/master/FACEEMOTIONBASEDMUSICPLAYER.ipynb" target="_blank">
-          Emotion Detection using CNN
-        </a>
-      </strong>
-    </li>
+    <div class="project-card">
+      <h3>Emotion Detection using CNN</h3>
+      <a href="https://github.com/deepthivj-aiml/Projects-ML/blob/master/FACEEMOTIONBASEDMUSICPLAYER.ipynb" target="_blank" class="button">View on GitHub</a>
+    </div>
 
-    <li>
-      <strong>
-        <a href="https://github.com/deepthivj-aiml/Projects-ML/blob/master/Urban_Sound_Classification.ipynb" target="_blank">
-          Urban sound classification
-        </a>
-      </strong>
-    </li>
+    <div class="project-card">
+      <h3>Urban Sound Classification</h3>
+      <a href="https://github.com/deepthivj-aiml/Projects-ML/blob/master/Urban_Sound_Classification.ipynb" target="_blank" class="button">View on GitHub</a>
+    </div>
 
-    <li>
-      <strong>
-        <a href="https://github.com/deepthivj-aiml/hackethon/blob/master/corona-probability-prediction.ipynb" target="_blank">
-          COVID Probability Prediction using CNN
-        </a>
-      </strong>
-    </li>
-  </ul>
+    <div class="project-card">
+      <h3>COVID Probability Prediction using CNN</h3>
+      <a href="https://github.com/deepthivj-aiml/hackethon/blob/master/corona-probability-prediction.ipynb" target="_blank" class="button">View on GitHub</a>
+    </div>
+  </div>
 </section>
 
 <section id="education">
@@ -201,14 +252,30 @@
 
 <section id="contact">
   <h2>Contact</h2>
-  <p>Email: <a href="mailto:deepthivj96@gmail.com">deepthivj96@gmail.com</a></p>
-  <p>LinkedIn: <a href="https://linkedin.com/in/deepthi-v-j-b06827105" target="_blank">linkedin.com/in/deepthi-v-j</a></p>
-  <p>GitHub: <a href="https://github.com/deepthivj-aiml" target="_blank">github.com/deepthivj-aiml</a></p>
+  <div class="contact-buttons">
+    <a href="mailto:deepthivj96@gmail.com">Email Me</a>
+    <a href="https://linkedin.com/in/deepthi-v-j-b06827105" target="_blank">LinkedIn</a>
+    <a href="https://github.com/deepthivj-aiml" target="_blank">GitHub</a>
+  </div>
 </section>
 
 <footer>
   © 2025 Deepthi V J — AI/ML Portfolio
 </footer>
+
+<script>
+  // Fade-in animation on scroll
+  const sections = document.querySelectorAll('section');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  sections.forEach(section => observer.observe(section));
+</script>
 
 </body>
 </html>
