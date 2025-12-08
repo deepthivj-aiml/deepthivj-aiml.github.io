@@ -1,146 +1,383 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Deepthi Jainlal</title>
-<style>
-  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin:0; background:#1e1e1e; color:#e0e0e0; line-height:1.6; scroll-behavior:smooth; }
-  header { background:#2a2a2a; color:#fff; padding:40px 20px; text-align:center; position:sticky; top:0; z-index:1000; box-shadow:0 2px 10px rgba(0,0,0,0.5);}
-  header h1 { margin:0; font-size:2.8rem;}
-  header p { font-size:1.2rem; margin-top:10px; color:#c0c0c0;}
-  nav { margin-top:15px;}
-  nav a { color:#e0e0e0; margin:0 15px; text-decoration:none; font-weight:600; transition:color 0.3s;}
-  nav a:hover { color:#00bcd4;}
-  section { padding:60px 20px; max-width:960px; margin:auto; background:#2a2a2a; border-radius:8px; margin-bottom:40px; opacity:0; transform:translateY(20px); transition: all 0.6s ease-out;}
-  section.visible { opacity:1; transform:translateY(0);}
-  h2 { color:#00bcd4; border-bottom:2px solid #00bcd4; display:inline-block; padding-bottom:5px; margin-bottom:20px;}
-  ul { list-style:none; padding:0;}
-  li { background:#3a3a3a; padding:15px; margin:10px 0; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.3);}
-  .projects-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:20px;}
-  .project-card { background:#3a3a3a; padding:20px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.4); transition:transform 0.3s, box-shadow 0.3s;}
-  .project-card:hover { transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,188,212,0.5);}
-  .project-card a.button { display:inline-block; margin-top:10px; padding:8px 16px; background:#00bcd4; color:white; border-radius:6px; text-decoration:none; font-weight:bold; transition:background 0.3s;}
-  .project-card a.button:hover { background:#0097a7;}
-  .contact-buttons a { display:inline-block; margin:5px; padding:10px 18px; background:#00bcd4; color:white; border-radius:6px; text-decoration:none; font-weight:bold; transition:background 0.3s;}
-  .contact-buttons a:hover { background:#0097a7;}
-  footer { text-align:center; padding:20px; background:#2a2a2a; color:#c0c0c0; margin-top:40px; font-size:0.9rem;}
-  a { color:#00bcd4;} a:hover { color:#0097a7;}
-  p span { color:#00bcd4; cursor:text;}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deepthi Jainlal</title>
 
-  /* Chatbot Styles */
-  #chatbot { position:fixed; bottom:20px; right:20px; width:320px; max-height:500px; background:#2a2a2a; border-radius:10px; box-shadow:0 4px 20px rgba(0,0,0,0.6); display:flex; flex-direction:column; font-size:14px; z-index:2000;}
-  #chatbot-header { background:#00bcd4; color:#fff; padding:10px; border-radius:10px 10px 0 0; cursor:pointer; font-weight:bold; text-align:center;}
-  #chatbot-messages { flex:1; overflow-y:auto; padding:10px; display:flex; flex-direction:column; gap:10px;}
-  .chat-message { padding:8px 12px; border-radius:8px; max-width:80%; }
-  .chat-user { align-self:flex-end; background:#00bcd4; color:#fff;}
-  .chat-bot { align-self:flex-start; background:#3a3a3a; color:#e0e0e0;}
-  #chatbot-input { display:flex; padding:10px; border-top:1px solid #444;}
-  #chatbot-input input { flex:1; padding:8px; border-radius:6px; border:none; outline:none; background:#1e1e1e; color:#fff;}
-  #chatbot-input button { padding:8px 12px; margin-left:6px; border:none; border-radius:6px; background:#00bcd4; color:#fff; font-weight:bold; cursor:pointer;}
-</style>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: #1e1e1e;
+      color: #e0e0e0;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: #2a2a2a;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+    header h1 { margin: 0; font-size: 2.8rem; }
+    header p { font-size: 1.2rem; margin-top: 10px; color: #c0c0c0; }
+    nav { margin-top: 15px; }
+    nav a {
+      color: #e0e0e0; margin: 0 15px; text-decoration: none; font-weight: 600; transition: color 0.3s;
+    }
+    nav a:hover { color: #00bcd4; }
+
+    section {
+      padding: 60px 20px;
+      max-width: 960px;
+      margin: auto;
+      background: #2a2a2a;
+      border-radius: 8px;
+      margin-bottom: 40px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+    section.visible { opacity: 1; transform: translateY(0); }
+
+    h2 {
+      color: #00bcd4;
+      border-bottom: 2px solid #00bcd4;
+      display: inline-block;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+    }
+    ul { list-style: none; padding: 0; }
+    li {
+      background: #3a3a3a;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .project-card {
+      background: #3a3a3a;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,188,212,0.5);
+    }
+    .project-card a.button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background: #00bcd4;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .project-card a.button:hover { background: #0097a7; }
+    .contact-buttons a {
+      display: inline-block;
+      margin: 5px;
+      padding: 10px 18px;
+      background: #00bcd4;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .contact-buttons a:hover { background: #0097a7; }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #2a2a2a;
+      color: #c0c0c0;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+    a { color: #00bcd4; }
+    a:hover { color: #0097a7; }
+    p span { color: #00bcd4; cursor: text; }
+
+    /* Chatbot styles */
+    #chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 350px;
+      max-height: 500px;
+      background: #2a2a2a;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      font-size: 0.9rem;
+      z-index: 2000;
+    }
+    #chat-header {
+      background: #00bcd4;
+      color: #fff;
+      padding: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      text-align: center;
+    }
+    #chat-messages {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+      background: #1e1e1e;
+    }
+    #chat-input {
+      display: flex;
+      border-top: 1px solid #444;
+    }
+    #chat-input input {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      background: #3a3a3a;
+      color: #fff;
+      outline: none;
+    }
+    #chat-input button {
+      padding: 10px 15px;
+      background: #00bcd4;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    #chat-input button:hover { background: #0097a7; }
+    .chat-message { margin: 5px 0; }
+    .user { color: #00bcd4; text-align: right; }
+    .bot { color: #fff; text-align: left; }
+  </style>
 </head>
 <body>
 
 <header>
   <h1>Deepthi Jainlal</h1>
-  <p>Data Science • AI/ML & LLM Developer • Agentic AI •Software Engineer</p>
+  <p>Data Science • AI/ML & LLM Developer • Agentic AI • Software Engineer</p>
   <nav>
     <a href="#summary">Summary</a>
     <a href="#experience">Experience</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#education">Education</a>
+    <a href="#certifications">Certifications</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
 
-<!-- Sections omitted for brevity (summary, experience, skills, projects, education, contact) -->
 <section id="summary">
-<h2>Summary</h2>
-<p>Software Engineer and AI/ML enthusiast with experience in developing scalable data pipelines, robust analytics platforms, and machine learning infrastructure. Skilled in Python, TensorFlow, PyTorch, Spark, Hadoop, Docker, Kubernetes, AWS, Azure, GCP. Passionate about building agentic AI systems and data-driven solutions.</p>
+  <h2>Summary</h2>
+  <p>
+    Software Engineer and AI/ML enthusiast with experience in developing scalable data pipelines, 
+    robust analytics platforms, and machine learning infrastructure. Proficient in Python, distributed 
+    data processing frameworks (Apache Spark, Hadoop), and machine learning frameworks including 
+    TensorFlow, PyTorch, and scikit-learn. Skilled in containerization and orchestration with Docker 
+    and Kubernetes, and experienced with cloud platforms such as AWS, Azure, and GCP.  
+
+    Passionate about building intelligent, agentic AI systems and data-driven solutions that drive 
+    operational excellence and enable strategic growth. Adept at designing high-quality, reliable 
+    data infrastructure and collaborating across teams to deliver impactful AI and analytics solutions.
+  </p>
 </section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <h3>Ford Motors | Data Scientist | Dec 2023 – Aug 2025</h3>
+  <ul>
+    <li>Developed LLM-based amortization analysis pipeline using prompt engineering, improving extraction reliability across financial documents.</li>
+    <li>Built automated cost prediction pipelines (XGBoost, Linear Regression) improving accuracy by 8% and enabling smarter vendor selection.</li>
+    <li>Migrated Alteryx workflows to scalable BigQuery integrated into enterprise dashboards.</li>
+    <li>Improved component cost model accuracy from 77% to 84% through feature engineering and regression optimization.</li>
+    <li>Collaborated with engineering and analytics teams to operationalize ML workflows.</li>
+  </ul>
+
+  <h3>Philips | ML Developer (GIG) | Jan 2023 – Dec 2023</h3>
+  <ul>
+    <li>Generated synthetic risk datasets using GANs, statistical modeling, and Markov chains.</li>
+    <li>Implemented Monte Carlo simulations for healthcare risk forecasting.</li>
+    <li>Built graph-based network analysis pipelines for risk propagation insights.</li>
+  </ul>
+
+  <h3>Philips | Software Engineer I | Aug 2021 – Dec 2023</h3>
+  <ul>
+    <li>Built agent-like automated testing workflows using .NET, SpecFlow, and gRPC, reducing test cycle time by 30%.</li>
+    <li>Designed background policy upgrade systems for IntelliVue patient monitors using C# and Docker.</li>
+    <li>Delivered software features following Agile, CI/CD, and quality engineering best practices.</li>
+  </ul>
+
+  <h3>Philips | Research Intern | Sep 2020 – Aug 2021</h3>
+  <ul>
+    <li>Implemented semantic segmentation using NNUNet achieving 89% accuracy for fetal heart chamber detection.</li>
+    <li>Improved localization by integrating YOLO-based thorax detection prior to segmentation.</li>
+    <li>Benchmarked multiple DL architectures and optimized Dice-coefficient evaluation pipelines.</li>
+  </ul>
+</section>
+
+<section id="skills">
+  <h2>Core Skills</h2>
+  <ul>
+    <li><strong>Languages & Data:</strong> Python, SQL, C#, BigQuery, Data Structures, Debugging, Optimization, Architecture Design</li>
+    <li><strong>Machine Learning & AI:</strong> PyTorch, TensorFlow, scikit-learn, LLMs, Prompt Engineering, OpenAI API, Generative AI, NLP, Computer Vision, Multi-Agent Systems (LangChain, AutoGen, RAG)</li>
+    <li><strong>Data Engineering & Distributed Systems:</strong> Apache Spark, Hadoop, Scalability, Reliability, Fault Tolerance, Load Balancing, Consensus Algorithms, ML Pipelines, Feature Engineering, Statistical Modeling</li>
+    <li><strong>Cloud & DevOps:</strong> AWS, Azure, GCP, Docker, Kubernetes, CI/CD, gRPC, System Design, Security-Aware AI Development</li>
+  </ul>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects-grid">
+    <div class="project-card">
+      <h3>Second-Hand Car Inspection Agent</h3>
+      <p>AI-driven multi-image inspection agent for used cars using Gemini 2.0 Flash and MCP architecture.</p>
+      <a href="https://www.kaggle.com/competitions/agents-intensive-capstone-project/writeups/autoevalai-ai-powered-second-hand-vehicle-analysi" target="_blank" class="button">View Project</a>
+    </div>
+    <div class="project-card">
+      <h3>Autonomous AI Blog Writer Agent</h3>
+      <p>Multi-agent content generation system using OpenAI API and LangChain with role-based collaboration and memory components.</p>
+      <a href="https://github.com/deepthivj-aiml/5-Day-AI-Agents-Intensive-course-Google/blob/main/day-1-multi-agent-systems-workflow-patterns.ipynb" target="_blank" class="button">View Project</a>
+    </div>
+    <div class="project-card">
+      <h3>LLM from Scratch (PyTorch)</h3>
+      <p>Implemented miniature GPT architecture including tokenization, multi-head attention, and AdamW optimization.</p>
+      <a href="https://colab.research.google.com/drive/1M8fm4Ne6PlZbZ9Dxd6gnA-Pmm6VXlofC#scrollTo=stM5AhURMQFe" target="_blank" class="button">View Project</a>
+    </div>
+    <div class="project-card">
+      <h3>Emotion Detection using CNN</h3>
+      <a href="https://github.com/deepthivj-aiml/Projects-ML/blob/master/FACEEMOTIONBASEDMUSICPLAYER.ipynb" target="_blank" class="button">View Project</a>
+    </div>
+    <div class="project-card">
+      <h3>Urban Sound Classification</h3>
+      <a href="https://github.com/deepthivj-aiml/Projects-ML/blob/master/Urban_Sound_Classification.ipynb" target="_blank" class="button">View Project</a>
+    </div>
+    <div class="project-card">
+      <h3>COVID Probability Prediction using CNN</h3>
+      <a href="https://github.com/deepthivj-aiml/hackethon/blob/master/corona-probability-prediction.ipynb" target="_blank" class="button">View Project</a>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <ul>
+    <li>Westcliff University, Irvine, CA — MSEM (Engineering Management & Big Data Analytics), 2027</li>
+    <li>VIT University, Vellore — M.Tech in AI & ML (GPA 8.4/10)</li>
+    <li>SNMIMT, MG University — B.Tech in CSE (GPA 7.2/10)</li>
+  </ul>
+</section>
+
+<section id="certifications">
+  <h2>Certifications</h2>
+  <ul>
+    <li>5‑Day Intensive AI Agent Course – Google (2025)</li>
+    <li>Responsible AI (2024)</li>
+    <li>Introduction to LLMs (2024)</li>
+    <li>IBM Python for Data Science & AI (2020)</li>
+    <li>SQL for BigQuery (2023)</li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: <span>deepthivj96@gmail.com</span></p>
+  <p>Phone: <span>+1-805-514-0126</span></p>
+  <div class="contact-buttons">
+    <a href="https://linkedin.com/in/deepthi-v-j-b06827105" target="_blank">LinkedIn</a>
+    <a href="https://github.com/deepthivj-aiml" target="_blank">GitHub</a>
+  </div>
+</section>
+
+<footer>
+  © 2025 Deepthi V J — Data Science, LLM & Agentic AI Portfolio
+</footer>
 
 <!-- Chatbot HTML -->
 <div id="chatbot">
-  <div id="chatbot-header">AI Assistant</div>
-  <div id="chatbot-messages"></div>
-  <div id="chatbot-input">
-    <input type="text" id="chatbot-text" placeholder="Ask me about my portfolio..."/>
-    <button id="chatbot-send">Send</button>
+  <div id="chat-header">Portfolio Chatbot</div>
+  <div id="chat-messages"></div>
+  <div id="chat-input">
+    <input type="text" id="user-input" placeholder="Ask me about my portfolio..." />
+    <button id="send-btn">Send</button>
   </div>
 </div>
 
 <script>
-const sectionsData = {
-  summary: document.querySelector('#summary').innerText,
-  experience: `Ford Motors | Data Scientist | Dec 2023 – Aug 2025
-- Developed LLM-based amortization analysis pipeline...
-Philips | ML Developer...
-Philips | Software Engineer I...
-Philips | Research Intern...`,
-  skills: `Python, SQL, C#, BigQuery, PyTorch, TensorFlow, scikit-learn, LLMs, NLP, Computer Vision, LangChain, AutoGen, RAG, Apache Spark, Hadoop, Docker, Kubernetes, AWS, Azure, GCP`,
-  projects: `Second-Hand Car Inspection Agent...
-Autonomous AI Blog Writer Agent...
-LLM from Scratch (PyTorch)...
-Emotion Detection using CNN...
-Urban Sound Classification...
-COVID Probability Prediction using CNN`,
-  education: `Westcliff University, Irvine, CA — MSEM 2027
-VIT University, Vellore — M.Tech AI & ML
-SNMIMT, MG University — B.Tech CSE`
-};
+  // Portfolio data as object
+  const portfolioData = {
+    summary: document.querySelector('#summary p').innerText,
+    experience: Array.from(document.querySelectorAll('#experience ul')).map(ul => ul.innerText).join('\n'),
+    skills: document.querySelector('#skills ul').innerText,
+    projects: Array.from(document.querySelectorAll('.project-card')).map(pc => pc.innerText).join('\n'),
+    education: document.querySelector('#education ul').innerText,
+    certifications: document.querySelector('#certifications ul').innerText,
+    contact: document.querySelector('#contact').innerText
+  };
 
-// Toggle chatbot
-document.querySelector('#chatbot-header').addEventListener('click',()=>{
-  const cb = document.getElementById('chatbot');
-  const input = document.getElementById('chatbot-input');
-  const messages = document.getElementById('chatbot-messages');
-  if(input.style.display==='none'){input.style.display='flex'; messages.style.display='flex';} else {input.style.display='none'; messages.style.display='none';}
-});
+  const messages = document.getElementById('chat-messages');
+  const input = document.getElementById('user-input');
+  const sendBtn = document.getElementById('send-btn');
 
-// Chatbot logic
-async function sendMessage() {
-  const input = document.getElementById('chatbot-text');
-  const messages = document.getElementById('chatbot-messages');
-  const userMsg = input.value.trim();
-  if(!userMsg) return;
-  appendMessage(userMsg, 'user');
-  input.value='';
-  
-  // Call OpenAI API (replace 'YOUR_API_KEY' with your key)
-  const response = await fetch('https://api.openai.com/v1/chat/completions',{
-    method:'POST',
-    headers:{
-      'Content-Type':'application/json',
-      'Authorization':'Bearer YOUR_API_KEY'
-    },
-    body: JSON.stringify({
-      model: 'gpt-3.5-turbo',
-      messages:[
-        {role:'system', content:'You are a helpful assistant summarizing Deepthi Jainlal portfolio.'},
-        {role:'user', content:`Answer using only the following portfolio info:\n${JSON.stringify(sectionsData)}\nUser question: ${userMsg}`}
-      ],
-      temperature:0.7
-    })
+  // Simple LLM-like matching
+  function generateResponse(userText) {
+    const query = userText.toLowerCase();
+    if(query.includes('summary')) return portfolioData.summary;
+    if(query.includes('experience') || query.includes('work')) return portfolioData.experience;
+    if(query.includes('skills')) return portfolioData.skills;
+    if(query.includes('project')) return portfolioData.projects;
+    if(query.includes('education') || query.includes('study')) return portfolioData.education;
+    if(query.includes('certification')) return portfolioData.certifications;
+    if(query.includes('contact') || query.includes('email') || query.includes('phone')) return portfolioData.contact;
+    // fallback: show summary snippet
+    return "I can answer questions about my portfolio. Here's my summary:\n\n" + portfolioData.summary;
+  }
+
+  function addMessage(text, sender) {
+    const msg = document.createElement('div');
+    msg.classList.add('chat-message', sender);
+    msg.innerText = text;
+    messages.appendChild(msg);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  sendBtn.addEventListener('click', () => {
+    const userText = input.value.trim();
+    if(!userText) return;
+    addMessage(userText, 'user');
+    const botResponse = generateResponse(userText);
+    addMessage(botResponse, 'bot');
+    input.value = '';
   });
-  
-  const data = await response.json();
-  const botMsg = data.choices[0].message.content;
-  appendMessage(botMsg,'bot');
-}
 
-function appendMessage(text,type){
-  const messages = document.getElementById('chatbot-messages');
-  const div = document.createElement('div');
-  div.classList.add('chat-message', type==='user'?'chat-user':'chat-bot');
-  div.innerText=text;
-  messages.appendChild(div);
-  messages.scrollTop=messages.scrollHeight;
-}
+  input.addEventListener('keypress', e => {
+    if(e.key === 'Enter') sendBtn.click();
+  });
 
-document.getElementById('chatbot-send').addEventListener('click',sendMessage);
-document.getElementById('chatbot-text').addEventListener('keypress',e=>{if(e.key==='Enter'){sendMessage();}});
+  // Fade-in sections
+  const sections = document.querySelectorAll('section');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+  sections.forEach(section => observer.observe(section));
 </script>
 
 </body>
