@@ -9,13 +9,14 @@
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      background: #1e1e1e;
+      background: #1e1e1e; /* professional dark gray */
       color: #e0e0e0;
       line-height: 1.6;
       scroll-behavior: smooth;
     }
+
     header {
-      background: #2a2a2a;
+      background: #2a2a2a; /* subtle contrast */
       color: #fff;
       padding: 40px 20px;
       text-align: center;
@@ -24,26 +25,40 @@
       z-index: 1000;
       box-shadow: 0 2px 10px rgba(0,0,0,0.5);
     }
+
     header h1 { margin: 0; font-size: 2.8rem; }
     header p { font-size: 1.2rem; margin-top: 10px; color: #c0c0c0; }
-    nav { margin-top: 15px; }
-    nav a {
-      color: #e0e0e0; margin: 0 15px; text-decoration: none; font-weight: 600; transition: color 0.3s;
+
+    nav {
+      margin-top: 15px;
     }
+
+    nav a {
+      color: #e0e0e0;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
     nav a:hover { color: #00bcd4; }
 
     section {
       padding: 60px 20px;
       max-width: 960px;
       margin: auto;
-      background: #2a2a2a;
+      background: #2a2a2a; /* section background */
       border-radius: 8px;
       margin-bottom: 40px;
       opacity: 0;
       transform: translateY(20px);
       transition: all 0.6s ease-out;
     }
-    section.visible { opacity: 1; transform: translateY(0); }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     h2 {
       color: #00bcd4;
@@ -52,7 +67,12 @@
       padding-bottom: 5px;
       margin-bottom: 20px;
     }
-    ul { list-style: none; padding: 0; }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
     li {
       background: #3a3a3a;
       padding: 15px;
@@ -60,11 +80,13 @@
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.3);
     }
+
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
     }
+
     .project-card {
       background: #3a3a3a;
       padding: 20px;
@@ -72,10 +94,12 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.4);
       transition: transform 0.3s, box-shadow 0.3s;
     }
+
     .project-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 20px rgba(0,188,212,0.5);
     }
+
     .project-card a.button {
       display: inline-block;
       margin-top: 10px;
@@ -87,7 +111,9 @@
       font-weight: bold;
       transition: background 0.3s;
     }
+
     .project-card a.button:hover { background: #0097a7; }
+
     .contact-buttons a {
       display: inline-block;
       margin: 5px;
@@ -99,7 +125,9 @@
       font-weight: bold;
       transition: background 0.3s;
     }
+
     .contact-buttons a:hover { background: #0097a7; }
+
     footer {
       text-align: center;
       padding: 20px;
@@ -108,78 +136,27 @@
       margin-top: 40px;
       font-size: 0.9rem;
     }
+
     a { color: #00bcd4; }
     a:hover { color: #0097a7; }
-    p span { color: #00bcd4; cursor: text; }
 
-    /* Chatbot styles */
-    #chatbot {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 350px;
-      max-height: 500px;
-      background: #2a2a2a;
-      border-radius: 10px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.6);
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      font-size: 0.9rem;
-      z-index: 2000;
+    p span {
+      color: #00bcd4;
+      cursor: text;
     }
-    #chat-header {
-      background: #00bcd4;
-      color: #fff;
-      padding: 10px;
-      font-weight: bold;
-      cursor: pointer;
-      text-align: center;
-    }
-    #chat-messages {
-      flex: 1;
-      padding: 10px;
-      overflow-y: auto;
-      background: #1e1e1e;
-    }
-    #chat-input {
-      display: flex;
-      border-top: 1px solid #444;
-    }
-    #chat-input input {
-      flex: 1;
-      padding: 10px;
-      border: none;
-      background: #3a3a3a;
-      color: #fff;
-      outline: none;
-    }
-    #chat-input button {
-      padding: 10px 15px;
-      background: #00bcd4;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    #chat-input button:hover { background: #0097a7; }
-    .chat-message { margin: 5px 0; }
-    .user { color: #00bcd4; text-align: right; }
-    .bot { color: #fff; text-align: left; }
   </style>
 </head>
 <body>
 
 <header>
   <h1>Deepthi Jainlal</h1>
-  <p>Data Science • AI/ML & LLM Developer • Agentic AI • Software Engineer</p>
+  <p>Data Science • AI/ML & LLM Developer • Agentic AI •Software Engineer</p>
   <nav>
     <a href="#summary">Summary</a>
     <a href="#experience">Experience</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#education">Education</a>
-    <a href="#certifications">Certifications</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
@@ -201,6 +178,7 @@
 
 <section id="experience">
   <h2>Experience</h2>
+
   <h3>Ford Motors | Data Scientist | Dec 2023 – Aug 2025</h3>
   <ul>
     <li>Developed LLM-based amortization analysis pipeline using prompt engineering, improving extraction reliability across financial documents.</li>
@@ -250,24 +228,29 @@
       <p>AI-driven multi-image inspection agent for used cars using Gemini 2.0 Flash and MCP architecture.</p>
       <a href="https://www.kaggle.com/competitions/agents-intensive-capstone-project/writeups/autoevalai-ai-powered-second-hand-vehicle-analysi" target="_blank" class="button">View Project</a>
     </div>
+
     <div class="project-card">
       <h3>Autonomous AI Blog Writer Agent</h3>
       <p>Multi-agent content generation system using OpenAI API and LangChain with role-based collaboration and memory components.</p>
       <a href="https://github.com/deepthivj-aiml/5-Day-AI-Agents-Intensive-course-Google/blob/main/day-1-multi-agent-systems-workflow-patterns.ipynb" target="_blank" class="button">View Project</a>
     </div>
+
     <div class="project-card">
       <h3>LLM from Scratch (PyTorch)</h3>
       <p>Implemented miniature GPT architecture including tokenization, multi-head attention, and AdamW optimization.</p>
       <a href="https://colab.research.google.com/drive/1M8fm4Ne6PlZbZ9Dxd6gnA-Pmm6VXlofC#scrollTo=stM5AhURMQFe" target="_blank" class="button">View Project</a>
     </div>
+
     <div class="project-card">
       <h3>Emotion Detection using CNN</h3>
       <a href="https://github.com/deepthivj-aiml/Projects-ML/blob/master/FACEEMOTIONBASEDMUSICPLAYER.ipynb" target="_blank" class="button">View Project</a>
     </div>
+
     <div class="project-card">
       <h3>Urban Sound Classification</h3>
       <a href="https://github.com/deepthivj-aiml/Projects-ML/blob/master/Urban_Sound_Classification.ipynb" target="_blank" class="button">View Project</a>
     </div>
+
     <div class="project-card">
       <h3>COVID Probability Prediction using CNN</h3>
       <a href="https://github.com/deepthivj-aiml/hackethon/blob/master/corona-probability-prediction.ipynb" target="_blank" class="button">View Project</a>
@@ -281,17 +264,6 @@
     <li>Westcliff University, Irvine, CA — MSEM (Engineering Management & Big Data Analytics), 2027</li>
     <li>VIT University, Vellore — M.Tech in AI & ML (GPA 8.4/10)</li>
     <li>SNMIMT, MG University — B.Tech in CSE (GPA 7.2/10)</li>
-  </ul>
-</section>
-
-<section id="certifications">
-  <h2>Certifications</h2>
-  <ul>
-    <li>5‑Day Intensive AI Agent Course – Google (2025)</li>
-    <li>Responsible AI (2024)</li>
-    <li>Introduction to LLMs (2024)</li>
-    <li>IBM Python for Data Science & AI (2020)</li>
-    <li>SQL for BigQuery (2023)</li>
   </ul>
 </section>
 
@@ -309,63 +281,8 @@
   © 2025 Deepthi V J — Data Science, LLM & Agentic AI Portfolio
 </footer>
 
-<!-- Chatbot HTML -->
-<div id="chatbot">
-  <div id="chat-header">Portfolio Chatbot</div>
-  <div id="chat-messages"></div>
-  <div id="chat-input">
-    <input type="text" id="user-input" placeholder="Ask me about my portfolio..." />
-    <button id="send-btn">Send</button>
-  </div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/@xenova/transformers/dist/transformers.min.js"></script>
 <script>
-  const messages = document.getElementById('chat-messages');
-  const input = document.getElementById('user-input');
-  const sendBtn = document.getElementById('send-btn');
-
-  // Extract all portfolio content
-  const portfolioText = Array.from(document.querySelectorAll('section'))
-    .map(sec => sec.innerText).join('\n');
-
-  async function generateBotResponse(userText) {
-    const model = await window.transformers.pipeline('text-generation', 'gpt2');
-    const prompt = `You are a helpful assistant for Deepthi Jainlal's portfolio. Use the content below to answer questions in a conversational manner.
-
-Portfolio Content:
-${portfolioText}
-
-Question: ${userText}
-Answer:`;
-    
-    const output = await model(prompt, { max_length: 300 });
-    return output[0].generated_text.replace(prompt, '').trim();
-  }
-
-  function addMessage(text, sender) {
-    const msg = document.createElement('div');
-    msg.classList.add('chat-message', sender);
-    msg.innerText = text;
-    messages.appendChild(msg);
-    messages.scrollTop = messages.scrollHeight;
-  }
-
-  sendBtn.addEventListener('click', async () => {
-    const userText = input.value.trim();
-    if(!userText) return;
-    addMessage(userText, 'user');
-    addMessage('...', 'bot'); // temporary loading
-    const botResponse = await generateBotResponse(userText);
-    messages.lastChild.innerText = botResponse;
-    input.value = '';
-  });
-
-  input.addEventListener('keypress', e => {
-    if(e.key === 'Enter') sendBtn.click();
-  });
-
-  // Fade-in sections
+  // Fade-in sections on scroll
   const sections = document.querySelectorAll('section');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -374,5 +291,6 @@ Answer:`;
   }, { threshold: 0.1 });
   sections.forEach(section => observer.observe(section));
 </script>
+
 </body>
 </html>
