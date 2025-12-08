@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Deepthi Jainlal Portfolio + Chatbot</title>
+<title>Deepthi Jainlal Portfolio + Interactive Chatbot</title>
 
 <style>
 body {
@@ -66,7 +66,7 @@ a:hover { color:#0097a7; }
 p span { color:#00bcd4; cursor:text; }
 
 /* Chatbot */
-#chatbot-container { position:fixed; bottom:20px; right:20px; width:350px; max-height:500px; background:#2a2a2a; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.5); display:flex; flex-direction:column; overflow:hidden; }
+#chatbot-container { position:fixed; bottom:20px; right:20px; width:380px; max-height:500px; background:#2a2a2a; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.5); display:flex; flex-direction:column; overflow:hidden; }
 #chat-window { flex:1; padding:10px; overflow-y:auto; }
 .chat-message { padding:8px 12px; border-radius:8px; margin:5px 0; max-width:90%; word-wrap:break-word; }
 .chat-message.user { background:#00bcd4; color:white; align-self:flex-end; }
@@ -92,7 +92,6 @@ p span { color:#00bcd4; cursor:text; }
   </nav>
 </header>
 
-<!-- Portfolio Sections -->
 <section id="summary">
   <h2>Summary</h2>
   <p>
@@ -113,8 +112,8 @@ p span { color:#00bcd4; cursor:text; }
 
   <h3>Ford Motors | Data Scientist | Dec 2023 – Aug 2025</h3>
   <ul>
-    <li>Developed LLM-based amortization analysis pipeline using prompt engineering...</li>
-    <li>Built automated cost prediction pipelines (XGBoost, Linear Regression) improving accuracy by 8%...</li>
+    <li>Developed LLM-based amortization analysis pipeline using prompt engineering, improving extraction reliability across financial documents.</li>
+    <li>Built automated cost prediction pipelines (XGBoost, Linear Regression) improving accuracy by 8% and enabling smarter vendor selection.</li>
     <li>Migrated Alteryx workflows to scalable BigQuery integrated into enterprise dashboards.</li>
     <li>Improved component cost model accuracy from 77% to 84% through feature engineering and regression optimization.</li>
     <li>Collaborated with engineering and analytics teams to operationalize ML workflows.</li>
@@ -217,7 +216,7 @@ p span { color:#00bcd4; cursor:text; }
 <div id="chatbot-container">
   <div id="chat-window"></div>
   <div id="chat-input">
-    <input type="text" placeholder="Ask about my portfolio..." id="user-input"/>
+    <input type="text" placeholder="Ask me about my portfolio..." id="user-input"/>
     <button id="send-btn">Send</button>
   </div>
 </div>
@@ -230,39 +229,40 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold:0.1 });
 sections.forEach(section => observer.observe(section));
 
-// Portfolio Chatbot with Cosine Similarity
-const PORTFOLIO_TEXT = [
-  document.querySelector("#summary").innerText,
-  document.querySelector("#experience").innerText,
-  document.querySelector("#skills").innerText,
-  document.querySelector("#projects").innerText,
-  document.querySelector("#education").innerText,
-  document.querySelector("#contact").innerText
+// Chatbot
+const PORTFOLIO_SECTIONS = [
+  {title:"Summary", text:document.querySelector("#summary").innerText},
+  {title:"Experience", text:document.querySelector("#experience").innerText},
+  {title:"Skills", text:document.querySelector("#skills").innerText},
+  {title:"Projects", text:document.querySelector("#projects").innerText},
+  {title:"Education", text:document.querySelector("#education").innerText},
+  {title:"Contact", text:document.querySelector("#contact").innerText}
 ];
 
-function tokenize(text) { return text.toLowerCase().match(/\b\w+\b/g)||[]; }
-function vectorize(tokens, vocab) {
+function tokenize(text){ return text.toLowerCase().match(/\b\w+\b/g)||[]; }
+function vectorize(tokens,vocab){
   const vec = Array(vocab.length).fill(0);
   tokens.forEach(t=>{ const idx=vocab.indexOf(t); if(idx!=-1) vec[idx]+=1; });
   return vec;
 }
-function cosineSim(vecA, vecB) {
-  let dot=0,normA=0,normB=0;
-  for(let i=0;i<vecA.length;i++){ dot+=vecA[i]*vecB[i]; normA+=vecA[i]*vecA[i]; normB+=vecB[i]*vecB[i]; }
-  return dot/(Math.sqrt(normA)*Math.sqrt(normB)+1e-10);
+function cosineSim(a,b){ let dot=0, normA=0, normB=0; for(let i=0;i<a.length;i++){ dot+=a[i]*b[i]; normA+=a[i]*a[i]; normB+=b[i]*b[i]; } return dot/(Math.sqrt(normA)*Math.sqrt(normB)+1e-10); }
+function summarize(text){
+  const sentences = text.split(/[.?!]\s/);
+  return sentences.slice(0,2).join(". ") + (sentences.length>2?"...":"");
 }
 
 function getAnswer(query){
   const queryTokens = tokenize(query);
-  const allTokens = Array.from(new Set([...queryTokens, ...PORTFOLIO_TEXT.flatMap(t=>tokenize(t))]));
+  const allTokens = Array.from(new Set([...queryTokens, ...PORTFOLIO_SECTIONS.flatMap(s=>tokenize(s.text))]));
   const queryVec = vectorize(queryTokens, allTokens);
-  let bestScore=-1, bestText="Sorry, I could not find an answer in my portfolio.";
-  PORTFOLIO_TEXT.forEach(text=>{
-    const textVec = vectorize(tokenize(text), allTokens);
-    const score = cosineSim(queryVec, textVec);
-    if(score>bestScore){ bestScore=score; bestText=text; }
+  let bestScore=-1, bestSection=null;
+  PORTFOLIO_SECTIONS.forEach(section=>{
+    const vec = vectorize(tokenize(section.text), allTokens);
+    const score = cosineSim(queryVec, vec);
+    if(score>bestScore){ bestScore=score; bestSection=section; }
   });
-  return bestText;
+  if(bestScore<0.05) return "Sorry, I couldn't understand your question. Try asking differently!";
+  return summarize(bestSection.text);
 }
 
 function addMessage(sender,text){
