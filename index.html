@@ -1,150 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Deepthi Jainlal</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Deepthi Jainlal Portfolio + Chatbot</title>
 
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background: #1e1e1e; /* professional dark gray */
-      color: #e0e0e0;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
+<style>
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background: #1e1e1e;
+  color: #e0e0e0;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
 
-    header {
-      background: #2a2a2a; /* subtle contrast */
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-    }
+header {
+  background: #2a2a2a;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
 
-    header h1 { margin: 0; font-size: 2.8rem; }
-    header p { font-size: 1.2rem; margin-top: 10px; color: #c0c0c0; }
+header h1 { margin:0; font-size:2.8rem; }
+header p { font-size:1.2rem; margin-top:10px; color:#c0c0c0; }
 
-    nav {
-      margin-top: 15px;
-    }
+nav { margin-top:15px; }
+nav a { color:#e0e0e0; margin:0 15px; text-decoration:none; font-weight:600; transition: color 0.3s; }
+nav a:hover { color:#00bcd4; }
 
-    nav a {
-      color: #e0e0e0;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
+section {
+  padding:60px 20px;
+  max-width:960px;
+  margin:auto;
+  background:#2a2a2a;
+  border-radius:8px;
+  margin-bottom:40px;
+  opacity:0;
+  transform:translateY(20px);
+  transition: all 0.6s ease-out;
+}
+section.visible { opacity:1; transform:translateY(0); }
 
-    nav a:hover { color: #00bcd4; }
+h2 { color:#00bcd4; border-bottom:2px solid #00bcd4; display:inline-block; padding-bottom:5px; margin-bottom:20px; }
+ul { list-style:none; padding:0; }
+li { background:#3a3a3a; padding:15px; margin:10px 0; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.3); }
 
-    section {
-      padding: 60px 20px;
-      max-width: 960px;
-      margin: auto;
-      background: #2a2a2a; /* section background */
-      border-radius: 8px;
-      margin-bottom: 40px;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease-out;
-    }
+.projects-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; }
+.project-card { background:#3a3a3a; padding:20px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.4); transition: transform 0.3s, box-shadow 0.3s; }
+.project-card:hover { transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,188,212,0.5); }
+.project-card a.button { display:inline-block; margin-top:10px; padding:8px 16px; background:#00bcd4; color:white; border-radius:6px; text-decoration:none; font-weight:bold; transition:background 0.3s; }
+.project-card a.button:hover { background:#0097a7; }
 
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+.contact-buttons a { display:inline-block; margin:5px; padding:10px 18px; background:#00bcd4; color:white; border-radius:6px; text-decoration:none; font-weight:bold; transition:background 0.3s; }
+.contact-buttons a:hover { background:#0097a7; }
 
-    h2 {
-      color: #00bcd4;
-      border-bottom: 2px solid #00bcd4;
-      display: inline-block;
-      padding-bottom: 5px;
-      margin-bottom: 20px;
-    }
+footer { text-align:center; padding:20px; background:#2a2a2a; color:#c0c0c0; margin-top:40px; font-size:0.9rem; }
 
-    ul {
-      list-style: none;
-      padding: 0;
-    }
+a { color:#00bcd4; }
+a:hover { color:#0097a7; }
+p span { color:#00bcd4; cursor:text; }
 
-    li {
-      background: #3a3a3a;
-      padding: 15px;
-      margin: 10px 0;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .project-card {
-      background: #3a3a3a;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,188,212,0.5);
-    }
-
-    .project-card a.button {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 8px 16px;
-      background: #00bcd4;
-      color: white;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-
-    .project-card a.button:hover { background: #0097a7; }
-
-    .contact-buttons a {
-      display: inline-block;
-      margin: 5px;
-      padding: 10px 18px;
-      background: #00bcd4;
-      color: white;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-
-    .contact-buttons a:hover { background: #0097a7; }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #2a2a2a;
-      color: #c0c0c0;
-      margin-top: 40px;
-      font-size: 0.9rem;
-    }
-
-    a { color: #00bcd4; }
-    a:hover { color: #0097a7; }
-
-    p span {
-      color: #00bcd4;
-      cursor: text;
-    }
-  </style>
+/* Chatbot */
+#chatbot-container { position:fixed; bottom:20px; right:20px; width:350px; max-height:500px; background:#2a2a2a; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.5); display:flex; flex-direction:column; overflow:hidden; }
+#chat-window { flex:1; padding:10px; overflow-y:auto; }
+.chat-message { padding:8px 12px; border-radius:8px; margin:5px 0; max-width:90%; word-wrap:break-word; }
+.chat-message.user { background:#00bcd4; color:white; align-self:flex-end; }
+.chat-message.bot { background:#3a3a3a; color:white; align-self:flex-start; }
+#chat-input { display:flex; border-top:1px solid #444; }
+#chat-input input { flex:1; padding:10px; border:none; outline:none; background:#1e1e1e; color:white; }
+#chat-input button { padding:10px; border:none; background:#00bcd4; color:white; cursor:pointer; font-weight:bold; }
+#chat-input button:hover { background:#0097a7; }
+</style>
 </head>
 <body>
 
@@ -161,6 +92,7 @@
   </nav>
 </header>
 
+<!-- Portfolio Sections -->
 <section id="summary">
   <h2>Summary</h2>
   <p>
@@ -181,8 +113,8 @@
 
   <h3>Ford Motors | Data Scientist | Dec 2023 – Aug 2025</h3>
   <ul>
-    <li>Developed LLM-based amortization analysis pipeline using prompt engineering, improving extraction reliability across financial documents.</li>
-    <li>Built automated cost prediction pipelines (XGBoost, Linear Regression) improving accuracy by 8% and enabling smarter vendor selection.</li>
+    <li>Developed LLM-based amortization analysis pipeline using prompt engineering...</li>
+    <li>Built automated cost prediction pipelines (XGBoost, Linear Regression) improving accuracy by 8%...</li>
     <li>Migrated Alteryx workflows to scalable BigQuery integrated into enterprise dashboards.</li>
     <li>Improved component cost model accuracy from 77% to 84% through feature engineering and regression optimization.</li>
     <li>Collaborated with engineering and analytics teams to operationalize ML workflows.</li>
@@ -281,16 +213,75 @@
   © 2025 Deepthi V J — Data Science, LLM & Agentic AI Portfolio
 </footer>
 
-<script>
-  // Fade-in sections on scroll
-  const sections = document.querySelectorAll('section');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  }, { threshold: 0.1 });
-  sections.forEach(section => observer.observe(section));
-</script>
+<!-- Chatbot -->
+<div id="chatbot-container">
+  <div id="chat-window"></div>
+  <div id="chat-input">
+    <input type="text" placeholder="Ask about my portfolio..." id="user-input"/>
+    <button id="send-btn">Send</button>
+  </div>
+</div>
 
+<script>
+// Fade-in sections
+const sections = document.querySelectorAll('section');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold:0.1 });
+sections.forEach(section => observer.observe(section));
+
+// Portfolio Chatbot with Cosine Similarity
+const PORTFOLIO_TEXT = [
+  document.querySelector("#summary").innerText,
+  document.querySelector("#experience").innerText,
+  document.querySelector("#skills").innerText,
+  document.querySelector("#projects").innerText,
+  document.querySelector("#education").innerText,
+  document.querySelector("#contact").innerText
+];
+
+function tokenize(text) { return text.toLowerCase().match(/\b\w+\b/g)||[]; }
+function vectorize(tokens, vocab) {
+  const vec = Array(vocab.length).fill(0);
+  tokens.forEach(t=>{ const idx=vocab.indexOf(t); if(idx!=-1) vec[idx]+=1; });
+  return vec;
+}
+function cosineSim(vecA, vecB) {
+  let dot=0,normA=0,normB=0;
+  for(let i=0;i<vecA.length;i++){ dot+=vecA[i]*vecB[i]; normA+=vecA[i]*vecA[i]; normB+=vecB[i]*vecB[i]; }
+  return dot/(Math.sqrt(normA)*Math.sqrt(normB)+1e-10);
+}
+
+function getAnswer(query){
+  const queryTokens = tokenize(query);
+  const allTokens = Array.from(new Set([...queryTokens, ...PORTFOLIO_TEXT.flatMap(t=>tokenize(t))]));
+  const queryVec = vectorize(queryTokens, allTokens);
+  let bestScore=-1, bestText="Sorry, I could not find an answer in my portfolio.";
+  PORTFOLIO_TEXT.forEach(text=>{
+    const textVec = vectorize(tokenize(text), allTokens);
+    const score = cosineSim(queryVec, textVec);
+    if(score>bestScore){ bestScore=score; bestText=text; }
+  });
+  return bestText;
+}
+
+function addMessage(sender,text){
+  const div=document.createElement("div");
+  div.classList.add("chat-message",sender);
+  div.innerText=text;
+  document.getElementById("chat-window").appendChild(div);
+  document.getElementById("chat-window").scrollTop=document.getElementById("chat-window").scrollHeight;
+}
+
+document.getElementById("send-btn").addEventListener("click",()=>{
+  const input=document.getElementById("user-input");
+  const text=input.value.trim();
+  if(!text) return;
+  addMessage("user",text);
+  const answer=getAnswer(text);
+  addMessage("bot",answer);
+  input.value="";
+});
+</script>
 </body>
 </html>
