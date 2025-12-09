@@ -1,189 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Deepthi Jainlal</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Deepthi Jainlal Portfolio</title>
 
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background: #1e1e1e; 
-      color: #e0e0e0;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-    header {
-      background: #2a2a2a; 
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-    }
-    header h1 { margin: 0; font-size: 2.8rem; }
-    header p { font-size: 1.2rem; margin-top: 10px; color: #c0c0c0; }
-    nav { margin-top: 15px; }
-    nav a {
-      color: #e0e0e0;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-    nav a:hover { color: #00bcd4; }
-    section {
-      padding: 60px 20px;
-      max-width: 960px;
-      margin: auto;
-      background: #2a2a2a; 
-      border-radius: 8px;
-      margin-bottom: 40px;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease-out;
-    }
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    h2 {
-      color: #00bcd4;
-      border-bottom: 2px solid #00bcd4;
-      display: inline-block;
-      padding-bottom: 5px;
-      margin-bottom: 20px;
-    }
-    ul { list-style: none; padding: 0; }
-    li {
-      background: #3a3a3a;
-      padding: 15px;
-      margin: 10px 0;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    }
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-    .project-card {
-      background: #3a3a3a;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,188,212,0.5);
-    }
-    .project-card a.button {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 8px 16px;
-      background: #00bcd4;
-      color: white;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-    .project-card a.button:hover { background: #0097a7; }
-    .contact-buttons a {
-      display: inline-block;
-      margin: 5px;
-      padding: 10px 18px;
-      background: #00bcd4;
-      color: white;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-    .contact-buttons a:hover { background: #0097a7; }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #2a2a2a;
-      color: #c0c0c0;
-      margin-top: 40px;
-      font-size: 0.9rem;
-    }
-    a { color: #00bcd4; }
-    a:hover { color: #0097a7; }
-    p span { color: #00bcd4; cursor: text; }
+<style>
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: #1e1e1e; color: #e0e0e0; line-height: 1.6; scroll-behavior: smooth; }
+header { background: #2a2a2a; color: #fff; padding: 40px 20px; text-align: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.5);}
+header h1 { margin: 0; font-size: 2.8rem; }
+header p { font-size: 1.2rem; margin-top: 10px; color: #c0c0c0; }
+nav { margin-top: 15px; }
+nav a { color: #e0e0e0; margin: 0 15px; text-decoration: none; font-weight: 600; transition: color 0.3s; }
+nav a:hover { color: #00bcd4; }
+section { padding: 60px 20px; max-width: 960px; margin: auto; background: #2a2a2a; border-radius: 8px; margin-bottom: 40px; opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+section.visible { opacity: 1; transform: translateY(0); }
+h2 { color: #00bcd4; border-bottom: 2px solid #00bcd4; display: inline-block; padding-bottom: 5px; margin-bottom: 20px; }
+ul { list-style: none; padding: 0; }
+li { background: #3a3a3a; padding: 15px; margin: 10px 0; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.3); }
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.project-card { background: #3a3a3a; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); transition: transform 0.3s, box-shadow 0.3s; }
+.project-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,188,212,0.5); }
+.project-card a.button { display: inline-block; margin-top: 10px; padding: 8px 16px; background: #00bcd4; color: white; border-radius: 6px; text-decoration: none; font-weight: bold; transition: background 0.3s; }
+.project-card a.button:hover { background: #0097a7; }
+.contact-buttons a { display: inline-block; margin: 5px; padding: 10px 18px; background: #00bcd4; color: white; border-radius: 6px; text-decoration: none; font-weight: bold; transition: background 0.3s; }
+.contact-buttons a:hover { background: #0097a7; }
+footer { text-align: center; padding: 20px; background: #2a2a2a; color: #c0c0c0; margin-top: 40px; font-size: 0.9rem; }
+a { color: #00bcd4; } a:hover { color: #0097a7; }
+p span { color: #00bcd4; cursor: text; }
 
-    /* Chat styles */
-    #chat-container {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 350px;
-      max-height: 500px;
-      background: #2a2a2a;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      font-size: 0.9rem;
-      z-index: 2000;
-    }
-    #chat-header {
-      background: #00bcd4;
-      color: #fff;
-      padding: 10px;
-      text-align: center;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    #chat-messages {
-      flex: 1;
-      padding: 10px;
-      overflow-y: auto;
-      background: #1e1e1e;
-    }
-    .chat-message {
-      margin: 5px 0;
-      padding: 8px 12px;
-      border-radius: 10px;
-      max-width: 80%;
-      clear: both;
-      word-wrap: break-word;
-    }
-    .user-message { background: #00bcd4; color: #fff; margin-left: auto; }
-    .bot-message { background: #3a3a3a; color: #fff; margin-right: auto; }
-    #chat-input {
-      display: flex;
-      border-top: 1px solid #444;
-    }
-    #chat-input input {
-      flex: 1;
-      padding: 10px;
-      border: none;
-      background: #1e1e1e;
-      color: #fff;
-      font-size: 0.9rem;
-    }
-    #chat-input button {
-      padding: 10px;
-      border: none;
-      background: #00bcd4;
-      color: #fff;
-      cursor: pointer;
-    }
-    #chat-input button:hover { background: #0097a7; }
-  </style>
+/* Chat UI */
+#chat-container { position: fixed; bottom: 20px; right: 20px; width: 320px; max-height: 450px; background: #2a2a2a; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.6); display: flex; flex-direction: column; overflow: hidden; font-size: 0.95rem;}
+#chat-header { background: #00bcd4; color: #fff; padding: 10px; text-align: center; font-weight: bold; }
+#chat-messages { flex: 1; padding: 10px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px;}
+.chat-message { background: #3a3a3a; padding: 8px 12px; border-radius: 8px; max-width: 90%; }
+.user-message { align-self: flex-end; background: #0097a7; color: #fff; }
+.bot-message { align-self: flex-start; background: #4a4a4a; color: #fff; }
+#chat-input { display: flex; border-top: 1px solid #444; }
+#chat-input input { flex: 1; border: none; padding: 10px; background: #1e1e1e; color: #e0e0e0; }
+#chat-input input:focus { outline: none; }
+#chat-input button { padding: 10px 15px; border: none; background: #00bcd4; color: #fff; cursor: pointer; }
+#chat-input button:hover { background: #0097a7; }
+</style>
 </head>
-<body>
 
+<body>
 <header>
   <h1>Deepthi Jainlal</h1>
-  <p>Data Science • AI/ML & LLM Developer • Agentic AI •Software Engineer</p>
+  <p>Data Science • AI/ML & LLM Developer • Agentic AI • Software Engineer</p>
   <nav>
     <a href="#summary">Summary</a>
     <a href="#experience">Experience</a>
@@ -196,17 +60,7 @@
 
 <section id="summary">
   <h2>Summary</h2>
-  <p>
-    Software Engineer and AI/ML enthusiast with experience in developing scalable data pipelines, 
-    robust analytics platforms, and machine learning infrastructure. Proficient in Python, distributed 
-    data processing frameworks (Apache Spark, Hadoop), and machine learning frameworks including 
-    TensorFlow, PyTorch, and scikit-learn. Skilled in containerization and orchestration with Docker 
-    and Kubernetes, and experienced with cloud platforms such as AWS, Azure, and GCP.  
-
-    Passionate about building intelligent, agentic AI systems and data-driven solutions that drive 
-    operational excellence and enable strategic growth. Adept at designing high-quality, reliable 
-    data infrastructure and collaborating across teams to deliver impactful AI and analytics solutions.
-  </p>
+  <p>Software Engineer and AI/ML enthusiast with experience in developing scalable data pipelines, robust analytics platforms, and machine learning infrastructure. Proficient in Python, distributed data processing frameworks (Apache Spark, Hadoop), and machine learning frameworks including TensorFlow, PyTorch, and scikit-learn. Skilled in containerization and orchestration with Docker and Kubernetes, and experienced with cloud platforms such as AWS, Azure, and GCP. Passionate about building intelligent, agentic AI systems and data-driven solutions that drive operational excellence and enable strategic growth.</p>
 </section>
 
 <section id="experience">
@@ -219,33 +73,15 @@
     <li>Improved component cost model accuracy from 77% to 84% through feature engineering and regression optimization.</li>
     <li>Collaborated with engineering and analytics teams to operationalize ML workflows.</li>
   </ul>
-  <h3>Philips | ML Developer (GIG) | Jan 2023 – Dec 2023</h3>
-  <ul>
-    <li>Generated synthetic risk datasets using GANs, statistical modeling, and Markov chains.</li>
-    <li>Implemented Monte Carlo simulations for healthcare risk forecasting.</li>
-    <li>Built graph-based network analysis pipelines for risk propagation insights.</li>
-  </ul>
-  <h3>Philips | Software Engineer I | Aug 2021 – Dec 2023</h3>
-  <ul>
-    <li>Built agent-like automated testing workflows using .NET, SpecFlow, and gRPC, reducing test cycle time by 30%.</li>
-    <li>Designed background policy upgrade systems for IntelliVue patient monitors using C# and Docker.</li>
-    <li>Delivered software features following Agile, CI/CD, and quality engineering best practices.</li>
-  </ul>
-  <h3>Philips | Research Intern | Sep 2020 – Aug 2021</h3>
-  <ul>
-    <li>Implemented semantic segmentation using NNUNet achieving 89% accuracy for fetal heart chamber detection.</li>
-    <li>Improved localization by integrating YOLO-based thorax detection prior to segmentation.</li>
-    <li>Benchmarked multiple DL architectures and optimized Dice-coefficient evaluation pipelines.</li>
-  </ul>
 </section>
 
 <section id="skills">
   <h2>Core Skills</h2>
   <ul>
-    <li><strong>Languages & Data:</strong> Python, SQL, C#, BigQuery, Data Structures, Debugging, Optimization, Architecture Design</li>
-    <li><strong>Machine Learning & AI:</strong> PyTorch, TensorFlow, scikit-learn, LLMs, Prompt Engineering, OpenAI API, Generative AI, NLP, Computer Vision, Multi-Agent Systems (LangChain, AutoGen, RAG)</li>
-    <li><strong>Data Engineering & Distributed Systems:</strong> Apache Spark, Hadoop, Scalability, Reliability, Fault Tolerance, Load Balancing, Consensus Algorithms, ML Pipelines, Feature Engineering, Statistical Modeling</li>
-    <li><strong>Cloud & DevOps:</strong> AWS, Azure, GCP, Docker, Kubernetes, CI/CD, gRPC, System Design, Security-Aware AI Development</li>
+    <li>Python, SQL, C#, BigQuery, Data Structures, Debugging, Optimization, Architecture Design</li>
+    <li>PyTorch, TensorFlow, scikit-learn, LLMs, Prompt Engineering, OpenAI API, Generative AI, NLP, Computer Vision, Multi-Agent Systems</li>
+    <li>Apache Spark, Hadoop, Scalability, Reliability, ML Pipelines, Feature Engineering</li>
+    <li>AWS, Azure, GCP, Docker, Kubernetes, CI/CD</li>
   </ul>
 </section>
 
@@ -254,30 +90,11 @@
   <div class="projects-grid">
     <div class="project-card">
       <h3>Second-Hand Car Inspection Agent</h3>
-      <p>AI-driven multi-image inspection agent for used cars using Gemini 2.0 Flash and MCP architecture.</p>
-      <a href="https://www.kaggle.com/competitions/agents-intensive-capstone-project/writeups/autoevalai-ai-powered-second-hand-vehicle-analysi" target="_blank" class="button">View Project</a>
+      <a href="#" class="button">View Project</a>
     </div>
     <div class="project-card">
       <h3>Autonomous AI Blog Writer Agent</h3>
-      <p>Multi-agent content generation system using OpenAI API and LangChain with role-based collaboration and memory components.</p>
-      <a href="https://github.com/deepthivj-aiml/5-Day-AI-Agents-Intensive-course-Google/blob/main/day-1-multi-agent-systems-workflow-patterns.ipynb" target="_blank" class="button">View Project</a>
-    </div>
-    <div class="project-card">
-      <h3>LLM from Scratch (PyTorch)</h3>
-      <p>Implemented miniature GPT architecture including tokenization, multi-head attention, and AdamW optimization.</p>
-      <a href="https://colab.research.google.com/drive/1M8fm4Ne6PlZbZ9Dxd6gnA-Pmm6VXlofC#scrollTo=stM5AhURMQFe" target="_blank" class="button">View Project</a>
-    </div>
-    <div class="project-card">
-      <h3>Emotion Detection using CNN</h3>
-      <a href="https://github.com/deepthivj-aiml/Projects-ML/blob/master/FACEEMOTIONBASEDMUSICPLAYER.ipynb" target="_blank" class="button">View Project</a>
-    </div>
-    <div class="project-card">
-      <h3>Urban Sound Classification</h3>
-      <a href="https://github.com/deepthivj-aiml/Projects-ML/blob/master/Urban_Sound_Classification.ipynb" target="_blank" class="button">View Project</a>
-    </div>
-    <div class="project-card">
-      <h3>COVID Probability Prediction using CNN</h3>
-      <a href="https://github.com/deepthivj-aiml/hackethon/blob/master/corona-probability-prediction.ipynb" target="_blank" class="button">View Project</a>
+      <a href="#" class="button">View Project</a>
     </div>
   </div>
 </section>
@@ -285,9 +102,9 @@
 <section id="education">
   <h2>Education</h2>
   <ul>
-    <li>Westcliff University, Irvine, CA — MSEM (Engineering Management & Big Data Analytics), 2027</li>
-    <li>VIT University, Vellore — M.Tech in AI & ML (GPA 8.4/10)</li>
-    <li>SNMIMT, MG University — B.Tech in CSE (GPA 7.2/10)</li>
+    <li>Westcliff University, Irvine, CA — MSEM 2027</li>
+    <li>VIT University, Vellore — M.Tech AI & ML</li>
+    <li>SNMIMT, MG University — B.Tech CSE</li>
   </ul>
 </section>
 
@@ -295,100 +112,81 @@
   <h2>Contact</h2>
   <p>Email: <span>deepthivj96@gmail.com</span></p>
   <p>Phone: <span>+1-805-514-0126</span></p>
-  <div class="contact-buttons">
-    <a href="https://linkedin.com/in/deepthi-v-j-b06827105" target="_blank">LinkedIn</a>
-    <a href="https://github.com/deepthivj-aiml" target="_blank">GitHub</a>
-  </div>
 </section>
 
-<footer>
-  © 2025 Deepthi V J — Data Science, LLM & Agentic AI Portfolio
-</footer>
+<footer>© 2025 Deepthi V J — Portfolio</footer>
 
 <!-- Chatbot -->
 <div id="chat-container">
-  <div id="chat-header">Portfolio Buddy of Deepthi</div>
-  <div id="chat-messages">
-    <div class="bot-message">Portfolio Buddy is loading...</div>
-  </div>
+  <div id="chat-header">Portfolio Buddy</div>
+  <div id="chat-messages"><div class="bot-message">Portfolio Buddy is ready! Ask me anything about my portfolio.</div></div>
   <div id="chat-input">
-    <input type="text" placeholder="Ask me anything about my portfolio..." id="user-input"/>
-    <button id="send-btn">Send</button>
+    <input id="chat-text" placeholder="Ask me anything..." />
+    <button id="chat-send">Send</button>
   </div>
 </div>
 
 <script>
-  // Section fade-in
-  const sections = document.querySelectorAll('section');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  }, { threshold: 0.1 });
-  sections.forEach(section => observer.observe(section));
+// Scroll fade-in
+const sections = document.querySelectorAll('section');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+sections.forEach(section => observer.observe(section));
 
-  // Portfolio chatbot logic
-  const portfolioSections = {
-    "summary": document.getElementById("summary").innerText,
-    "experience": document.getElementById("experience").innerText,
-    "skills": document.getElementById("skills").innerText,
-    "projects": document.getElementById("projects").innerText,
-    "education": document.getElementById("education").innerText,
-    "contact": document.getElementById("contact").innerText
-  };
+// Extract section data dynamically
+const portfolioData = Array.from(document.querySelectorAll('section')).map(sec=>{
+  const title = sec.querySelector('h2') ? sec.querySelector('h2').innerText : 'Section';
+  const content = sec.innerText.replace(title,'').trim();
+  return {section: title, content: content};
+});
 
-  function embed(text) {
-    const words = text.toLowerCase().replace(/[^a-z0-9 ]/g,'').split(/\s+/);
-    const vec = {};
-    words.forEach(w => vec[w] = (vec[w]||0)+1);
-    return vec;
-  }
+// Tokenize & Cosine similarity
+function tokenize(str){ return str.toLowerCase().replace(/[^\w\s]/gi,'').split(/\s+/); }
+function cosineSim(a,b){
+  const aTokens = tokenize(a), bTokens = tokenize(b);
+  const allTokens = Array.from(new Set([...aTokens, ...bTokens]));
+  const aVec = allTokens.map(t=>aTokens.filter(x=>x===t).length);
+  const bVec = allTokens.map(t=>bTokens.filter(x=>x===t).length);
+  const dot = aVec.reduce((sum,val,i)=>sum+val*bVec[i],0);
+  const magA = Math.sqrt(aVec.reduce((sum,val)=>sum+val*val,0));
+  const magB = Math.sqrt(bVec.reduce((sum,val)=>sum+val*val,0));
+  return dot / (magA*magB + 1e-8);
+}
 
-  function cosineSim(a,b){
-    const allWords = new Set([...Object.keys(a), ...Object.keys(b)]);
-    let dot=0, magA=0, magB=0;
-    allWords.forEach(w=>{
-      dot += (a[w]||0)*(b[w]||0);
-      magA += (a[w]||0)**2;
-      magB += (b[w]||0)**2;
-    });
-    if(magA===0 || magB===0) return 0;
-    return dot/(Math.sqrt(magA)*Math.sqrt(magB));
-  }
+// Chat functions
+const chatInput = document.getElementById('chat-text');
+const chatSend = document.getElementById('chat-send');
+const chatMessages = document.getElementById('chat-messages');
 
-  function getBestAnswer(question){
-    const qVec = embed(question);
-    let bestScore = 0;
-    let bestSection = "Sorry, I couldn't understand your question. Try asking differently!";
-    for(const [section, content] of Object.entries(portfolioSections)){
-      const score = cosineSim(qVec, embed(content));
-      if(score > bestScore){
-        bestScore = score;
-        bestSection = content;
-      }
-    }
-    return bestSection;
-  }
+function addMessage(msg,isUser){
+  const div = document.createElement('div');
+  div.className = isUser?'chat-message user-message':'chat-message bot-message';
+  div.textContent = msg;
+  chatMessages.appendChild(div);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
 
-  const chatMessages = document.getElementById("chat-messages");
-  const userInput = document.getElementById("user-input");
-  const sendBtn = document.getElementById("send-btn");
+function getResponse(msg){
+  let maxSim=0, answer="Sorry, I couldn't understand your question. Try asking differently!";
+  portfolioData.forEach(item=>{
+    const sim = cosineSim(msg, item.content);
+    if(sim>maxSim){ maxSim=sim; answer=item.content; }
+  });
+  return answer;
+}
 
-  function appendMessage(message, sender){
-    const div = document.createElement("div");
-    div.className = sender === "user" ? "chat-message user-message" : "chat-message bot-message";
-    div.innerText = message;
-    chatMessages.appendChild(div);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-  }
+function sendMessage(){
+  const msg = chatInput.value.trim();
+  if(msg==="") return;
+  addMessage(msg,true);
+  chatInput.value="";
+  setTimeout(()=>{ addMessage(getResponse(msg),false); },200);
+}
 
-  function sendMessage(){
-    const msg = userInput.value.trim();
-    if(msg==="") return;
-    appendMessage(msg,"user");
-    userInput.value="";
-    const reply = getBestAnswer(msg);
-    setTimeout(()=>appendMessage(reply,"bot"),300); // simulate delay
-  }
+chatSend.addEventListener('click',sendMessage);
+chatInput.addEventListener('keypress',e=>{ if(e.key==='Enter') sendMessage(); });
+</script>
 
-  sendBtn.addEvent
+</body>
+</html>
