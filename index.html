@@ -1,181 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Deepthi Jainlal Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deepthi Jainlal</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: #1e1e1e;
+      color: #e0e0e0;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
 
-<style>
-/* ===== General Styles ===== */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  background: #1e1e1e;
-  color: #e0e0e0;
-  line-height: 1.6;
-  scroll-behavior: smooth;
-}
+    header {
+      background: #2a2a2a;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
 
-/* ===== Header ===== */
-header {
-  background: #2a2a2a;
-  color: #fff;
-  padding: 40px 20px;
-  text-align: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-}
-header h1 { margin:0; font-size:2.8rem; }
-header p { font-size:1.2rem; margin-top:10px; color:#c0c0c0; }
-nav { margin-top:15px; }
-nav a {
-  color: #e0e0e0;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight:600;
-  transition: color 0.3s;
-}
-nav a:hover { color: #00bcd4; }
+    header h1 { margin: 0; font-size: 2.8rem; }
+    header p { font-size: 1.2rem; margin-top: 10px; color: #c0c0c0; }
 
-/* ===== Sections ===== */
-section {
-  padding: 60px 20px;
-  max-width: 960px;
-  margin: auto;
-  background: #2a2a2a;
-  border-radius:8px;
-  margin-bottom:40px;
-  opacity:0;
-  transform:translateY(20px);
-  transition: all 0.6s ease-out;
-}
-section.visible {
-  opacity:1;
-  transform:translateY(0);
-}
-h2 {
-  color: #00bcd4;
-  border-bottom:2px solid #00bcd4;
-  display:inline-block;
-  padding-bottom:5px;
-  margin-bottom:20px;
-}
-ul { list-style:none; padding:0; }
-li {
-  background:#3a3a3a;
-  padding:15px;
-  margin:10px 0;
-  border-radius:8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-}
+    nav { margin-top: 15px; }
+    nav a {
+      color: #e0e0e0;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: #00bcd4; }
 
-/* ===== Projects Grid ===== */
-.projects-grid {
-  display:grid;
-  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-  gap:20px;
-}
-.project-card {
-  background:#3a3a3a;
-  padding:20px;
-  border-radius:10px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.4);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.project-card:hover {
-  transform:translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,188,212,0.5);
-}
-.project-card a.button {
-  display:inline-block;
-  margin-top:10px;
-  padding:8px 16px;
-  background:#00bcd4;
-  color:white;
-  border-radius:6px;
-  text-decoration:none;
-  font-weight:bold;
-  transition: background 0.3s;
-}
-.project-card a.button:hover { background:#0097a7; }
+    section {
+      padding: 60px 20px;
+      max-width: 960px;
+      margin: auto;
+      background: #2a2a2a;
+      border-radius: 8px;
+      margin-bottom: 40px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-/* ===== Contact Buttons ===== */
-.contact-buttons a {
-  display:inline-block;
-  margin:5px;
-  padding:10px 18px;
-  background:#00bcd4;
-  color:white;
-  border-radius:6px;
-  text-decoration:none;
-  font-weight:bold;
-  transition: background 0.3s;
-}
-.contact-buttons a:hover { background:#0097a7; }
+    h2 {
+      color: #00bcd4;
+      border-bottom: 2px solid #00bcd4;
+      display: inline-block;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+    }
 
-/* ===== Footer ===== */
-footer {
-  text-align:center;
-  padding:20px;
-  background:#2a2a2a;
-  color:#c0c0c0;
-  margin-top:40px;
-  font-size:0.9rem;
-}
-a { color:#00bcd4; }
-a:hover { color:#0097a7; }
-p span { color:#00bcd4; cursor:text; }
+    ul { list-style: none; padding: 0; }
+    li {
+      background: #3a3a3a;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
 
-/* ===== Chatbot Styles ===== */
-#portfolioBuddy {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 320px;
-  max-height: 500px;
-  background: #2a2a2a;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-  display:flex;
-  flex-direction:column;
-  overflow:hidden;
-  font-size: 0.9rem;
-  z-index: 9999;
-}
-#chatHeader {
-  background: #00bcd4;
-  color: white;
-  padding: 10px;
-  text-align:center;
-  font-weight:bold;
-  cursor:pointer;
-}
-#chatMessages {
-  flex:1;
-  padding:10px;
-  overflow-y:auto;
-  display:flex;
-  flex-direction:column;
-  gap:5px;
-}
-.chat-message { padding:6px 10px; border-radius:6px; max-width:90%; }
-.user-message { align-self:flex-end; background:#00bcd4; color:white; }
-.bot-message { align-self:flex-start; background:#3a3a3a; color:#fff; white-space: pre-wrap; }
-#chatInputContainer { display:flex; }
-#chatInput { flex:1; padding:8px; border:none; border-top:1px solid #444; background:#1e1e1e; color:white; }
-#chatSend { padding:8px 12px; background:#00bcd4; border:none; color:white; cursor:pointer; }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
 
-/* ===== Fade-in sections on scroll ===== */
-</style>
+    .project-card {
+      background: #3a3a3a;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,188,212,0.5);
+    }
+    .project-card a.button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background: #00bcd4;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .project-card a.button:hover { background: #0097a7; }
+
+    .contact-buttons a {
+      display: inline-block;
+      margin: 5px;
+      padding: 10px 18px;
+      background: #00bcd4;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .contact-buttons a:hover { background: #0097a7; }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #2a2a2a;
+      color: #c0c0c0;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+
+    a { color: #00bcd4; }
+    a:hover { color: #0097a7; }
+    p span { color: #00bcd4; cursor: text; }
+
+    /* Chatbot styles */
+    #chatContainer {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 350px;
+      max-height: 500px;
+      background: #2a2a2a;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      z-index: 9999;
+    }
+    #chatHeader {
+      background: #00bcd4;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    #chatMessages {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+      background: #1e1e1e;
+    }
+    .chat-message { padding: 8px 10px; margin: 5px 0; border-radius: 6px; max-width: 90%; }
+    .user-message { background: #00bcd4; color: white; align-self: flex-end; }
+    .bot-message { background: #3a3a3a; color: #fff; align-self: flex-start; }
+    #chatInputContainer {
+      display: flex;
+      border-top: 1px solid #00bcd4;
+    }
+    #chatInput {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      background: #1e1e1e;
+      color: #fff;
+    }
+    #chatSend {
+      background: #00bcd4;
+      border: none;
+      padding: 10px 15px;
+      color: white;
+      cursor: pointer;
+    }
+    #chatSend:hover { background: #0097a7; }
+  </style>
 </head>
 <body>
 
-<!-- ===== Header ===== -->
 <header>
   <h1>Deepthi Jainlal</h1>
-  <p>Data Science • AI/ML & LLM Developer • Agentic AI • Software Engineer</p>
+  <p>Data Science • AI/ML & LLM Developer • Agentic AI •Software Engineer</p>
   <nav>
     <a href="#summary">Summary</a>
     <a href="#experience">Experience</a>
@@ -186,7 +196,6 @@ p span { color:#00bcd4; cursor:text; }
   </nav>
 </header>
 
-<!-- ===== Portfolio Sections ===== -->
 <section id="summary">
   <h2>Summary</h2>
   <p>
@@ -307,92 +316,71 @@ p span { color:#00bcd4; cursor:text; }
   © 2025 Deepthi V J — Data Science, LLM & Agentic AI Portfolio
 </footer>
 
-<!-- ===== Portfolio Buddy Chatbot ===== -->
-<div id="portfolioBuddy">
+<!-- Chatbot HTML -->
+<div id="chatContainer">
   <div id="chatHeader">Portfolio Buddy</div>
-  <div id="chatMessages"><div class="bot-message">Portfolio Buddy is ready! Ask me anything about the portfolio.</div></div>
+  <div id="chatMessages">
+    <div class="bot-message">Portfolio Buddy is loading...</div>
+    <div class="bot-message">Portfolio Buddy is ready! Ask me anything about the portfolio.</div>
+  </div>
   <div id="chatInputContainer">
-    <input type="text" id="chatInput" placeholder="Ask me...">
+    <input type="text" id="chatInput" placeholder="Ask me anything..." />
     <button id="chatSend">Send</button>
   </div>
 </div>
 
 <script>
-// ===== Fade-in sections =====
-const sections = document.querySelectorAll('section');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting) entry.target.classList.add('visible');
+  // ===== Fade-in sections =====
+  const sections = document.querySelectorAll('section');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+  sections.forEach(section => observer.observe(section));
+
+  // ===== Chatbot Logic =====
+  const chatInput = document.getElementById('chatInput');
+  const chatSend = document.getElementById('chatSend');
+  const chatMessages = document.getElementById('chatMessages');
+
+  const portfolioData = Array.from(document.querySelectorAll('section')).map(sec=>{
+    const title = sec.querySelector('h2') ? sec.querySelector('h2').innerText.toLowerCase() : 'section';
+    const content = sec.innerText.replace(sec.querySelector('h2')?.innerText,'').trim();
+    return {section: title, content: content};
   });
-}, { threshold: 0.1 });
-sections.forEach(section => observer.observe(section));
 
-// ===== Chatbot Logic =====
-const chatInput = document.getElementById('chatInput');
-const chatSend = document.getElementById('chatSend');
-const chatMessages = document.getElementById('chatMessages');
+  function tokenize(str){ 
+    return str.toLowerCase().replace(/[^\w\s]/gi,'').split(/\s+/); 
+  }
 
-// Extract portfolio content
-const portfolioData = Array.from(document.querySelectorAll('section')).map(sec=>{
-  const title = sec.querySelector('h2') ? sec.querySelector('h2').innerText : 'Section';
-  const content = sec.innerText.replace(title,'').trim();
-  return {section: title, content: content};
-});
+  function cosineSim(a,b){
+    const aTokens = tokenize(a), bTokens = tokenize(b);
+    const allTokens = Array.from(new Set([...aTokens,...bTokens]));
+    const aVec = allTokens.map(t=>aTokens.filter(x=>x===t).length);
+    const bVec = allTokens.map(t=>bTokens.filter(x=>x===t).length);
+    const dot = aVec.reduce((sum,val,i)=>sum+val*bVec[i],0);
+    const magA = Math.sqrt(aVec.reduce((sum,val)=>sum+val*val,0));
+    const magB = Math.sqrt(bVec.reduce((sum,val)=>sum+val*val,0));
+    return dot/(magA*magB + 1e-8);
+  }
 
-// Tokenizer
-function tokenize(str){ 
-  return str.toLowerCase().replace(/[^\w\s]/gi,'').split(/\s+/); 
-}
+  const sectionKeywords = {
+    'summary':['summary','about','profile','intro','introduce','career'],
+    'experience':['experience','work','employment','job','career'],
+    'skills':['skills','technologies','stack','tools','expertise'],
+    'projects':['projects','work samples','portfolio','applications','apps'],
+    'education':['education','school','university','college','degree','qualification'],
+    'contact':['contact','email','phone','linkedin','github']
+  };
 
-// Cosine similarity
-function cosineSim(a,b){
-  const aTokens = tokenize(a), bTokens = tokenize(b);
-  const allTokens = Array.from(new Set([...aTokens,...bTokens]));
-  const aVec = allTokens.map(t=>aTokens.filter(x=>x===t).length);
-  const bVec = allTokens.map(t=>bTokens.filter(x=>x===t).length);
-  const dot = aVec.reduce((sum,val,i)=>sum+val*bVec[i],0);
-  const magA = Math.sqrt(aVec.reduce((sum,val)=>sum+val*val,0));
-  const magB = Math.sqrt(bVec.reduce((sum,val)=>sum+val*val,0));
-  return dot/(magA*magB + 1e-8);
-}
+  function getResponse(msg){
+    const input = msg.toLowerCase().trim();
+    if(input.length===0) return "Please ask something!";
 
-// Get response
-function getResponse(msg){
-  msg = msg.toLowerCase().trim();
-  if(msg.length===0) return "Please ask something!";
-  
-  let maxSim = 0, answer = "Sorry, I couldn't understand your question. Try asking differently!";
-  let bestSection = "";
-  portfolioData.forEach(item=>{
-    const sim = cosineSim(msg,item.content);
-    if(sim>maxSim){ maxSim=sim; answer=item.content; bestSection=item.section; }
-  });
-  
-  if(maxSim>0.05) answer = `Here's what I found from the ${bestSection} section:\n\n${answer}`;
-  return answer;
-}
+    const greetings = ['hi','hello','hey','good morning','good afternoon','good evening'];
+    if(greetings.some(g=>input.includes(g))) return "Hello! 👋 I’m Portfolio Buddy. Ask me anything about my portfolio!";
 
-// Display message
-function addMessage(msg,isUser){
-  const div = document.createElement('div');
-  div.className = isUser?'chat-message user-message':'chat-message bot-message';
-  div.textContent = msg;
-  chatMessages.appendChild(div);
-  chatMessages.scrollTop = chatMessages.scrollHeight;
-}
-
-// Send message
-function sendMessage(){
-  const msg = chatInput.value;
-  if(!msg) return;
-  addMessage(msg,true);
-  chatInput.value = '';
-  setTimeout(()=>{ addMessage(getResponse(msg),false); }, 300);
-}
-
-chatSend.addEventListener('click',sendMessage);
-chatInput.addEventListener('keypress',e=>{ if(e.key==='Enter') sendMessage(); });
-</script>
-
-</body>
-</html>
+    for(const [sec, keywords] of Object.entries(sectionKeywords)){
+      if(keywords.some(k=>input.includes(k))){
+        const match = portfolioData
