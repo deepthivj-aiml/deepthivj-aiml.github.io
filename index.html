@@ -46,49 +46,66 @@
     ul { padding-left: 1.2rem; }
     ul li { margin-bottom: 0.8rem; }
 
-    .company-icons {
-      display: flex; align-items: center; gap: 1.2rem; margin-bottom: 1rem;
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
     }
-    .company-icons img {
+
+    .highlight-card {
+      background: #fff;
+      padding: 1.4rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      text-align: center;
+    }
+    .highlight-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+    }
+    .highlight-card h3 { margin-top: 0.5rem; }
+    .highlight-card img {
       width: 80px;
       height: 80px;
       object-fit: contain;
+      margin-bottom: 0.8rem;
       border-radius: 12px;
       background: #fff;
       padding: 0.3rem;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
-    .highlight-grid, .project-grid, .blog-grid {
+    .blog-grid, .project-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5rem;
       margin-top: 1rem;
     }
 
-    .highlight-card, .project-card, .blog-card {
+    .blog-card, .project-card {
       background: #fff;
       padding: 1.4rem;
       border-radius: 12px;
       box-shadow: 0 6px 18px rgba(0,0,0,0.08);
       transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
-    .highlight-card:hover, .project-card:hover, .blog-card:hover {
+    .blog-card:hover, .project-card:hover {
       transform: translateY(-6px);
       box-shadow: 0 12px 28px rgba(0,0,0,0.15);
     }
-    .highlight-card h3, .project-card h3, .blog-card h3 { margin-top: 0; }
-    .highlight-card a, .project-card a, .blog-card a {
+    .blog-card a, .project-card a {
       color: #2563eb; text-decoration: none; font-weight: 600;
     }
-    .highlight-card a:hover, .project-card a:hover, .blog-card a:hover { text-decoration: underline; }
+    .blog-card a:hover, .project-card a:hover { text-decoration: underline; }
 
     footer { background: #1e3a8a; color: white; text-align: center; padding: 1.5rem; }
 
     @media (max-width: 600px) {
       h1 { font-size: 1.8rem; }
       .headline { font-size: 1.05rem; }
-      .company-icons img { width: 60px; height: 60px; }
+      .highlight-card img { width: 60px; height: 60px; }
     }
   </style>
 </head>
@@ -123,12 +140,9 @@
   <!-- Experience Highlights -->
   <section>
     <h2>Experience & Highlights</h2>
-    <div class="company-icons">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Ford_logo_flat.svg/250px-Ford_logo_flat.svg.png" alt="Ford Motors" title="Ford Motors">
-      <img src="https://hmp-websites.s3.amazonaws.com/hmp_ln/2023-02/Philips%20Healthcare.jpg" alt="Philips Healthcare" title="Philips Healthcare">
-    </div>
     <div class="highlight-grid">
       <div class="highlight-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Ford_logo_flat.svg/250px-Ford_logo_flat.svg.png" alt="Ford Motors Logo">
         <h3>Ford Motors</h3>
         <ul>
           <li>Developed dashboards and ML models resulting in $23M+ cost savings.</li>
@@ -139,6 +153,7 @@
         </ul>
       </div>
       <div class="highlight-card">
+        <img src="https://hmp-websites.s3.amazonaws.com/hmp_ln/2023-02/Philips%20Healthcare.jpg" alt="Philips Healthcare Logo">
         <h3>Philips Healthcare</h3>
         <ul>
           <li>Developed patient monitoring software & simulators reducing testing complexity by 80%.</li>
