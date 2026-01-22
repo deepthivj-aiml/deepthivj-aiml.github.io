@@ -10,30 +10,28 @@
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
     background-color: #f0f4f8;
     color: #333;
-    scroll-behavior: smooth;
+    line-height: 1.6;
   }
 
   header {
     background: linear-gradient(135deg, #1e3a8a, #2563eb);
-    color: #fff;
     text-align: center;
+    color: #fff;
     padding: 3rem 1rem;
   }
 
   header h1 {
-    margin: 0.5rem 0;
     font-size: 2.5rem;
-    font-weight: 700;
+    margin-bottom: 0.5rem;
   }
 
   header h2 {
     font-size: 1.3rem;
     font-weight: 500;
-    margin: 0.3rem 0 1rem 0;
     color: #ffedd5;
+    margin-bottom: 1rem;
   }
 
   .profile-img {
@@ -53,17 +51,13 @@
     font-weight: 600;
     text-decoration: none;
     color: #fff;
-    transition: all 0.3s ease;
   }
 
   .links a[href*="linkedin"] { background-color: #0077b5; }
   .links a[href*="github"]   { background-color: #333; }
   .links a[href*="medium"]   { background-color: #00ab6c; }
 
-  .links a:hover {
-    opacity: 0.85;
-    transform: translateY(-2px);
-  }
+  .links a:hover { opacity: 0.85; transform: translateY(-2px); }
 
   .container {
     max-width: 900px;
@@ -71,33 +65,15 @@
     padding: 0 1rem;
   }
 
-  section {
-    margin-bottom: 2rem;
-  }
-
-  h2 {
+  h2.section-title {
     color: #1e3a8a;
     border-bottom: 3px solid #1e3a8a;
     padding-bottom: 0.3rem;
     margin-bottom: 1rem;
   }
 
-  ul {
-    padding-left: 1.2rem;
-  }
-
-  ul li {
-    margin-bottom: 0.8rem;
-  }
-
-  a {
-    color: #1e3a8a;
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
+  ul { padding-left: 1.2rem; }
+  ul li { margin-bottom: 0.8rem; }
 
   .resume-container {
     text-align: center;
@@ -120,7 +96,6 @@
     border-radius: 25px;
     text-decoration: none;
     font-weight: 600;
-    transition: all 0.3s ease;
   }
 
   .download-btn:hover {
@@ -135,14 +110,8 @@
     color: white;
   }
 
-  footer a {
-    color: #ffd700;
-    text-decoration: none;
-  }
-
-  footer a:hover {
-    text-decoration: underline;
-  }
+  footer a { color: #ffd700; text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
 
   @media (max-width: 600px) {
     .profile-img { width: 120px; height: 120px; }
@@ -167,24 +136,25 @@
 
   <!-- About Me -->
   <section id="about">
-    <h2>About Me</h2>
-    <p>I am a Data Scientist and ML Engineer with experience in AI/ML, data analytics, and software development. I build intelligent systems that optimize processes, forecast trends, and extract actionable insights from data. Passionate about leveraging machine learning to solve real-world problems and improve business outcomes.</p>
+    <h2 class="section-title">About Me</h2>
+    <p>I am currently pursuing a Master’s in Engineering Management at Westcliff University, with a strong foundation in AI/ML, computer vision, and software engineering. I have industry experience working on high-impact projects in healthcare and supply chain, building intelligent systems that optimize processes, forecast trends, and extract actionable insights from data.</p>
+    <p>I am skilled in Python, R, C#, SQL, PyTorch, TensorFlow, Scikit-learn, Pandas, and Power BI, with a passion for building efficient and scalable solutions. I am looking for opportunities to contribute to cutting-edge AI/ML projects and collaborate with teams that push the boundaries of technology.</p>
   </section>
 
   <!-- Key Highlights -->
   <section id="highlights">
-    <h2>Key Highlights</h2>
+    <h2 class="section-title">Key Highlights</h2>
     <ul>
       <li>Developed dashboards and ML models at Ford Motors, delivering multi-million $ savings.</li>
       <li>Built software solutions at Philips Healthcare, automating testing and improving system efficiency.</li>
       <li>Worked on deep learning research projects achieving high-accuracy medical image segmentation.</li>
-      <li>Proficient in Python, R, C#, SQL, PyTorch, TensorFlow, Scikit-learn, Pandas, NumPy, Power BI, and Qlik Sense.</li>
+      <li>Proficient in AI/ML frameworks, data engineering tools, and visualization platforms.</li>
     </ul>
   </section>
 
   <!-- Projects -->
   <section id="projects">
-    <h2>Projects</h2>
+    <h2 class="section-title">Projects</h2>
     <ul>
       <li>Agentic AI Used Car Inspection – CV & LLM integration for real-time defect detection.</li>
       <li>Real-Time Emotion Classifier – Facial expression recognition using CNNs & PyTorch.</li>
@@ -195,7 +165,7 @@
 
   <!-- Publications / Blogs -->
   <section id="publications">
-    <h2>Publications & Blogs</h2>
+    <h2 class="section-title">Publications & Blogs</h2>
     <ul>
       <li><a href="https://medium.com/@deepthivj96/evaluating-sampling-efficiency-in-bayesian-inference-a-benchmark-of-random-walk-metropolis-vs-f85c34d1682b" target="_blank">Evaluating Sampling Efficiency in Bayesian Inference</a></li>
       <li><a href="https://medium.com/operations-research-bit/the-ultimate-guide-hybrid-anomaly-detection-with-autoencoders-xgboost-1a565bdc6710" target="_blank">The Ultimate Guide: Hybrid Anomaly Detection</a></li>
@@ -205,7 +175,7 @@
 
   <!-- Resume Section -->
   <section id="resume">
-    <h2>Resume</h2>
+    <h2 class="section-title">Resume</h2>
     <div class="resume-container">
       <iframe src="https://github.com/deepthivj-aiml/Resume/raw/main/Deepthi_VJ_Resume.pdf" type="application/pdf"></iframe>
       <a href="https://github.com/deepthivj-aiml/Resume/raw/main/Deepthi_VJ_Resume.pdf" download class="download-btn">Download Resume</a>
@@ -214,7 +184,7 @@
 
   <!-- Contact Section -->
   <section id="contact">
-    <h2>Contact</h2>
+    <h2 class="section-title">Contact</h2>
     <p>Email: <a href="mailto:d.venmanasseriljainlal.1104@westcliff.edu">d.venmanasseriljainlal.1104@westcliff.edu</a></p>
     <p>Phone: +1 (Your Phone Number Here)</p>
   </section>
