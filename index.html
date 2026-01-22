@@ -1,247 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Deepthi Jainlal Portfolio</title>
-<style>
-  body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;margin:0;background:#1e1e1e;color:#e0e0e0;line-height:1.6;scroll-behavior:smooth;}
-  header{background:#2a2a2a;color:#fff;padding:40px 20px;text-align:center;position:sticky;top:0;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,0.5);}
-  header h1{margin:0;font-size:2.8rem;}header p{font-size:1.2rem;margin-top:10px;color:#c0c0c0;}
-  nav{margin-top:15px;}nav a{color:#e0e0e0;margin:0 15px;text-decoration:none;font-weight:600;transition:color 0.3s;}nav a:hover{color:#00bcd4;}
-  section{padding:60px 20px;max-width:960px;margin:auto;background:#2a2a2a;border-radius:8px;margin-bottom:40px;opacity:0;transform:translateY(20px);transition:all 0.6s ease-out;}
-  section.visible{opacity:1;transform:translateY(0);}
-  h2{color:#00bcd4;border-bottom:2px solid #00bcd4;display:inline-block;padding-bottom:5px;margin-bottom:20px;}
-  ul{list-style:none;padding:0;}
-  li{background:#3a3a3a;padding:15px;margin:10px 0;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.3);}
-  .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
-  .project-card{background:#3a3a3a;padding:20px;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.4);transition:transform 0.3s, box-shadow 0.3s;}
-  .project-card:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,188,212,0.5);}
-  .project-card a.button{display:inline-block;margin-top:10px;padding:8px 16px;background:#00bcd4;color:white;border-radius:6px;text-decoration:none;font-weight:bold;transition: background 0.3s;}
-  .project-card a.button:hover{background:#0097a7;}
-  .contact-buttons a{display:inline-block;margin:5px;padding:10px 18px;background:#00bcd4;color:white;border-radius:6px;text-decoration:none;font-weight:bold;transition:background 0.3s;}
-  .contact-buttons a:hover{background:#0097a7;}
-  footer{text-align:center;padding:20px;background:#2a2a2a;color:#c0c0c0;margin-top:40px;font-size:0.9rem;}
-  a{color:#00bcd4;}a:hover{color:#0097a7;}p span{color:#00bcd4;cursor:text;}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deepthi VJ | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f8f9fa;
+      color: #333;
+    }
 
-  /* Chat styles */
-  #chatContainer{position:fixed;bottom:20px;right:20px;width:350px;max-height:500px;background:#2a2a2a;border-radius:10px;box-shadow:0 4px 15px rgba(0,0,0,0.6);display:flex;flex-direction:column;overflow:hidden;z-index:9999;}
-  #chatHeader{background:#00bcd4;color:white;padding:10px;text-align:center;font-weight:bold;cursor:pointer;}
-  #chatMessages{flex:1;padding:10px;overflow-y:auto;background:#1e1e1e;}
-  .chat-message{padding:8px 10px;margin:5px 0;border-radius:6px;max-width:90%;}
-  .user-message{background:#00bcd4;color:white;align-self:flex-end;}
-  .bot-message{background:#3a3a3a;color:#fff;align-self:flex-start;}
-  #chatInputContainer{display:flex;border-top:1px solid #00bcd4;}
-  #chatInput{flex:1;padding:10px;border:none;background:#1e1e1e;color:#fff;}
-  #chatSend{background:#00bcd4;border:none;padding:10px 15px;color:white;cursor:pointer;}
-  #chatSend:hover{background:#0097a7;}
-</style>
+    header {
+      background-color: #1e3a8a;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0.2rem 0;
+      font-size: 2rem;
+    }
+
+    header p {
+      margin: 0.2rem 0;
+      font-weight: 500;
+    }
+
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      color: #1e3a8a;
+      border-bottom: 2px solid #1e3a8a;
+      padding-bottom: 0.3rem;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    ul li {
+      margin-bottom: 0.8rem;
+    }
+
+    a {
+      color: #1e3a8a;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .highlight {
+      font-weight: 600;
+      color: #e11d48;
+    }
+
+    .key-highlights li {
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #1e3a8a;
+      color: white;
+    }
+
+    .links a {
+      margin: 0 0.5rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      header p {
+        font-size: 0.9rem;
+      }
+
+      .profile-img {
+        width: 90px;
+        height: 90px;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <header>
-<h1>Deepthi Jainlal</h1>
-<p>Data Science • AI/ML Developer •Software Engineer • LLM • Agentic AI </p>
-<nav>
-<a href="#summary">Summary</a>
-<a href="#experience">Experience</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#education">Education</a>
-<a href="#contact">Contact</a>
-</nav>
+  <img src="your-photo.jpg" alt="Deepthi VJ" class="profile-img">
+  <h1>Deepthi Venmanasseril Jainlal</h1>
+  <p>Enhancing Networks, One Parameter at a Time!</p>
+  <p>MS in Engineering Management (Big Data Analytics) | Data Scientist & ML Engineer</p>
+  <div class="links">
+    <a href="#">LinkedIn</a> | 
+    <a href="#">GitHub</a> | 
+    <a href="#">Portfolio</a> | 
+    <a href="#">Medium</a>
+  </div>
 </header>
 
-<section id="summary">
-<h2>Summary</h2>
-<p>Software Engineer and AI/ML enthusiast with experience in developing scalable data pipelines, robust analytics platforms, and machine learning infrastructure. Proficient in Python, distributed data processing frameworks (Apache Spark, Hadoop), and machine learning frameworks including TensorFlow, PyTorch, and scikit-learn. Skilled in containerization and orchestration with Docker and Kubernetes, and experienced with cloud platforms such as AWS, Azure, and GCP. Passionate about building intelligent, agentic AI systems and data-driven solutions that drive operational excellence and enable strategic growth. Adept at designing high-quality, reliable data infrastructure and collaborating across teams to deliver impactful AI and analytics solutions.</p>
-</section>
+<div class="container">
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am currently pursuing a Master’s in Engineering Management (Big Data Analytics) with a strong foundation in AI, ML, and 
+      data-driven solutions. I have 4.6+ years of experience in industry, working on impactful projects in ML, AI, supply chain 
+      analytics, and backend engineering. My passion lies in building scalable solutions, optimizing workflows, and contributing 
+      to research and innovation.
+    </p>
+  </section>
 
-<section id="experience">
-<h2>Experience</h2>
-<h3>Ford Motors | Data Scientist | Dec 2023 – Aug 2025</h3>
-<ul>
-<li>Developed LLM-based amortization analysis pipeline using prompt engineering, improving extraction reliability across financial documents.</li>
-<li>Built automated cost prediction pipelines (XGBoost, Linear Regression) improving accuracy by 8% and enabling smarter vendor selection.</li>
-<li>Migrated Alteryx workflows to scalable BigQuery integrated into enterprise dashboards.</li>
-<li>Improved component cost model accuracy from 77% to 84% through feature engineering and regression optimization.</li>
-<li>Collaborated with engineering and analytics teams to operationalize ML workflows.</li>
-</ul>
-<h3>Philips | ML Developer (GIG) | Jan 2023 – Dec 2023</h3>
-<ul>
-<li>Generated synthetic risk datasets using GANs, statistical modeling, and Markov chains.</li>
-<li>Implemented Monte Carlo simulations for healthcare risk forecasting.</li>
-<li>Built graph-based network analysis pipelines for risk propagation insights.</li>
-</ul>
-<h3>Philips | Software Engineer I | Aug 2021 – Dec 2023</h3>
-<ul>
-<li>Built agent-like automated testing workflows using .NET, SpecFlow, and gRPC, reducing test cycle time by 30%.</li>
-<li>Designed background policy upgrade systems for IntelliVue patient monitors using C# and Docker.</li>
-<li>Delivered software features following Agile, CI/CD, and quality engineering best practices.</li>
-</ul>
-<h3>Philips | Research Intern | Sep 2020 – Aug 2021</h3>
-<ul>
-<li>Implemented semantic segmentation using NNUNet achieving 89% accuracy for fetal heart chamber detection.</li>
-<li>Improved localization by integrating YOLO-based thorax detection prior to segmentation.</li>
-<li>Benchmarked multiple DL architectures and optimized Dice-coefficient evaluation pipelines.</li>
-</ul>
-</section>
+  <section id="highlights">
+    <h2>Key Highlights</h2>
+    <ul class="key-highlights">
+      <li>💡 Built predictive lead scoring models and automated ML pipelines on GCP Vertex AI, improving selection accuracy by 8%.</li>
+      <li>💡 Optimized power and memory usage for ML pipelines, reducing inference time by <span class="highlight">50%</span> and model size by <span class="highlight">40%</span>.</li>
+      <li>💡 Developed edge-cloud collaborative inference techniques, achieving a <span class="highlight">73%</span> reduction in latency for VGG16 network inference.</li>
+      <li>💡 Ideated and incubated 4+ innovations into patents.</li>
+      <li>💡 Contributed to 3 international publications and served as a reviewer at CVPR 2024.</li>
+    </ul>
+  </section>
 
-<section id="skills">
-<h2>Core Skills</h2>
-<ul>
-<li><strong>Languages & Data:</strong> Python, SQL, C#, BigQuery, Data Structures, Debugging, Optimization, Architecture Design</li>
-<li><strong>Machine Learning & AI:</strong> PyTorch, TensorFlow, scikit-learn, LLMs, Prompt Engineering, OpenAI API, Generative AI, NLP, Computer Vision, Multi-Agent Systems (LangChain, AutoGen, RAG)</li>
-<li><strong>Data Engineering & Distributed Systems:</strong> Apache Spark, Hadoop, Scalability, Reliability, Fault Tolerance, Load Balancing, Consensus Algorithms, ML Pipelines, Feature Engineering, Statistical Modeling</li>
-<li><strong>Cloud & DevOps:</strong> AWS, Azure, GCP, Docker, Kubernetes, CI/CD, gRPC, System Design, Security-Aware AI Development</li>
-</ul>
-</section>
+  <section id="patents">
+    <h2>Patents</h2>
+    <ul>
+      <li>A Method And System For Determining An Action In a Video – CS filing complete.</li>
+      <li>System and Method for Light-weight Eye Fixation Prediction Using Attention Guided Image Priors – CS filing complete.</li>
+      <li>Software System & Method for Single Frame Based Panning Photograph Generation – CS filing complete.</li>
+      <li>Semi-Supervised Framework With Progressive Pseudo-Labelling For Animal Facial Action Recognition – CS filing complete.</li>
+    </ul>
+  </section>
 
-<section id="projects">
-<h2>Projects</h2>
-<div class="projects-grid">
-<div class="project-card"><h3>Second-Hand Car Inspection Agent</h3><p>AI-driven multi-image inspection agent for used cars using Gemini 2.0 Flash and MCP architecture.</p><a href="https://www.kaggle.com/competitions/agents-intensive-capstone-project/writeups/autoevalai-ai-powered-second-hand-vehicle-analysi" target="_blank" class="button">View Project</a></div>
-<div class="project-card"><h3>Autonomous AI Blog Writer Agent</h3><p>Multi-agent content generation system using OpenAI API and LangChain with role-based collaboration and memory components.</p><a href="https://github.com/deepthivj-aiml/5-Day-AI-Agents-Intensive-course-Google/blob/main/day-1-multi-agent-systems-workflow-patterns.ipynb" target="_blank" class="button">View Project</a></div>
-<div class="project-card"><h3>LLM from Scratch (PyTorch)</h3><p>Implemented miniature GPT architecture including tokenization, multi-head attention, and AdamW optimization.</p><a href="https://colab.research.google.com/drive/1M8fm4Ne6PlZbZ9Dxd6gnA-Pmm6VXlofC#scrollTo=stM5AhURMQFe" target="_blank" class="button">View Project</a></div>
-<div class="project-card"><h3>Emotion Detection using CNN</h3><a href="https://github.com/deepthivj-aiml/Projects-ML/blob/master/FACEEMOTIONBASEDMUSICPLAYER.ipynb" target="_blank" class="button">View Project</a></div>
-<div class="project-card"><h3>Urban Sound Classification</h3><a href="https://github.com/deepthivj-aiml/Projects-ML/blob/master/Urban_Sound_Classification.ipynb" target="_blank" class="button">View Project</a></div>
-<div class="project-card"><h3>COVID Probability Prediction using CNN</h3><a href="https://github.com/deepthivj-aiml/hackethon/blob/master/corona-probability-prediction.ipynb" target="_blank" class="button">View Project</a></div>
-</div>
-</section>
+  <section id="publications">
+    <h2>Research & Publications</h2>
+    <ul>
+      <li>PawFACS: Leveraging Semi-Supervised Learning for Pet Facial Action Recognition (BMVC 2024).</li>
+      <li>Reviewer at 12th Women in Computer Vision Workshop (CVPR 2024).</li>
+      <li>A Light-Weight Human Eye Fixation Solution for Smartphone Applications (CVPR 2023).</li>
+      <li>FixPNet: Attention Guided Fixation Map Prediction With Explicit Image Priors (CVPR 2023).</li>
+      <li>Twitter Bot Detection and Ranking using Supervised Machine Learning Models (ICDSAAI 2022).</li>
+    </ul>
+  </section>
 
-<section id="education">
-<h2>Education</h2>
-<ul>
-<li>Westcliff University, Irvine, CA — MSEM (Engineering Management & Big Data Analytics), 2027</li>
-<li>VIT University, Vellore — M.Tech in AI & ML (GPA 8.4/10)</li>
-<li>SNMIMT, MG University — B.Tech in CSE (GPA 7.2/10)</li>
-</ul>
-</section>
-
-<section id="contact">
-<h2>Contact</h2>
-<p>Email: <span>deepthivj96@gmail.com</span></p>
-<p>Phone: <span>+1-805-514-0126</span></p>
-<div class="contact-buttons">
-<a href="https://linkedin.com/in/deepthi-v-j-b06827105" target="_blank">LinkedIn</a>
-<a href="https://github.com/deepthivj-aiml" target="_blank">GitHub</a>
-</div>
-</section>
-
-<footer>© 2025 Deepthi V J — Data Science, LLM & Agentic AI Portfolio</footer>
-
-<!-- Chatbot -->
-<div id="chatContainer">
-<div id="chatHeader">Portfolio Buddy</div>
-<div id="chatMessages">
-<div class="bot-message">Portfolio Buddy is loading...</div>
-<div class="bot-message">Portfolio Buddy is ready! Ask me anything about the portfolio.</div>
-</div>
-<div id="chatInputContainer">
-<input type="text" id="chatInput" placeholder="Ask me anything...">
-<button id="chatSend">Send</button>
-</div>
+  <section id="projects">
+    <h2>Personal Projects</h2>
+    <ul>
+      <li>
+        <strong>Data Analysis on the Impact of COVID-19 on the World Economy</strong> – Analyzed GDP, unemployment, labor costs, and trade indicators to quantify the pandemic’s impact. <br>
+        <em>Tech Stack:</em> Pandas, Matplotlib, Seaborn, Keras, NumPy. <a href="#">Project Link</a>
+      </li>
+      <li>
+        <strong>Twitter Bot Detection and Ranking</strong> – Built an algorithm to classify Twitter accounts as bots or genuine users and rank them by impact. <br>
+        <em>Tech Stack:</em> Pandas, TensorFlow, Keras, NumPy, NLTK, SciPy, Seaborn. <a href="#">Project Link</a>
+      </li>
+    </ul>
+  </section>
 </div>
 
-<script>
-const sections=document.querySelectorAll('section');
-const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting) entry.target.classList.add('visible');});},{threshold:0.1});
-sections.forEach(section=>observer.observe(section));
+<footer>
+  <p>📧 Contact me: <a href="mailto:deepthivj96@gmail.com">deepthivj96@gmail.com</a></p>
+</footer>
 
-const chatInput=document.getElementById('chatInput');
-const chatSend=document.getElementById('chatSend');
-const chatMessages=document.getElementById('chatMessages');
-
-const portfolioData=Array.from(document.querySelectorAll('section')).map(sec=>{
-  const title=sec.querySelector('h2')?sec.querySelector('h2').innerText.toLowerCase():'section';
-  const content=sec.innerText.replace(sec.querySelector('h2')?.innerText,'').trim();
-  return {section:title,content};
-});
-
-function tokenize(str){return str.toLowerCase().replace(/[^\w\s]/gi,'').split(/\s+/);}
-function cosineSim(a,b){
-  const aTokens=tokenize(a),bTokens=tokenize(b);
-  const allTokens=Array.from(new Set([...aTokens,...bTokens]));
-  const aVec=allTokens.map(t=>aTokens.filter(x=>x===t).length);
-  const bVec=allTokens.map(t=>bTokens.filter(x=>x===t).length);
-  const dot=aVec.reduce((sum,val,i)=>sum+val*bVec[i],0);
-  const magA=Math.sqrt(aVec.reduce((sum,val)=>sum+val*val,0));
-  const magB=Math.sqrt(bVec.reduce((sum,val)=>sum+val*val,0));
-  return dot/(magA*magB + 1e-8);
-}
-function editDistance(s1,s2){
-  const m=s1.length,n=s2.length,dp=[];
-  for(let i=0;i<=m;i++){dp[i]=[];for(let j=0;j<=n;j++) dp[i][j]=0;}
-  for(let i=0;i<=m;i++) dp[i][0]=i;
-  for(let j=0;j<=n;j++) dp[0][j]=j;
-  for(let i=1;i<=m;i++){
-    for(let j=1;j<=n;j++){
-      dp[i][j]=s1[i-1]===s2[j-1]?dp[i-1][j-1]:1+Math.min(dp[i-1][j-1],dp[i][j-1],dp[i-1][j]);
-    }
-  }
-  return dp[m][n];
-}
-function similarityScore(a,b){
-  const cos=cosineSim(a,b);
-  const ed=editDistance(a.toLowerCase(),b.toLowerCase());
-  const norm=1 - Math.min(ed/Math.max(a.length,b.length),1);
-  return 0.7*cos + 0.3*norm;
-}
-
-const sectionKeywords={
-  'summary':['summary','about','profile','intro','introduce','career'],
-  'experience':['experience','work','employment','job','career'],
-  'skills':['skills','technologies','stack','tools','expertise'],
-  'projects':['projects','work samples','portfolio','applications','apps'],
-  'education':['education','school','university','college','degree','qualification'],
-  'contact':['contact','email','phone','linkedin','github']
-};
-
-function getResponse(msg){
-  const input=msg.toLowerCase().trim();
-  if(input.length===0) return "Please ask something!";
-  const greetings=['hi','hello','hey','good morning','good afternoon','good evening'];
-  if(greetings.some(g=>input.includes(g))) return "Hello! 👋 I’m Portfolio Buddy. Ask me anything about my portfolio!";
-
-  // keyword match with fuzzy
-  for(const [sec,keywords] of Object.entries(sectionKeywords)){
-    if(keywords.some(k=>similarityScore(input,k)>0.7)){
-      const match=portfolioData.find(d=>d.section===sec);
-      return match?match.content:`I have information about ${sec}.`;
-    }
-  }
-
-  // fallback cosine + fuzzy similarity
-  let bestSim=0,bestSection='';
-  for(const d of portfolioData){
-    const sim=similarityScore(input,d.content);
-    if(sim>bestSim){ bestSim=sim; bestSection=d.section; }
-  }
-  if(bestSim>0.15){
-    const match=portfolioData.find(d=>d.section===bestSection);
-    return match.content;
-  }
-  return "Sorry, I couldn't understand your question. Try asking differently!";
-}
-
-function appendMessage(msg,isUser){
-  const div=document.createElement('div');
-  div.className='chat-message '+(isUser?'user-message':'bot-message');
-  div.innerText=msg;
-  chatMessages.appendChild(div);
-  chatMessages.scrollTop=chatMessages.scrollHeight;
-}
-
-function sendMessage(){
-  const msg=chatInput.value;
-  if(!msg) return;
-  appendMessage(msg,true);
-  chatInput.value='';
-  setTimeout(()=>{appendMessage(getResponse(msg),false);},300);
-}
-
-chatSend.addEventListener('click',sendMessage);
-chatInput.addEventListener('keypress',e=>{if(e.key==='Enter')sendMessage();});
-</script>
 </body>
 </html>
