@@ -80,10 +80,6 @@
       color: #e11d48;
     }
 
-    .key-highlights li {
-      margin-bottom: 1rem;
-    }
-
     footer {
       text-align: center;
       padding: 1rem;
@@ -116,76 +112,103 @@
 <header>
   <img src="your-photo.jpg" alt="Deepthi VJ" class="profile-img">
   <h1>Deepthi Venmanasseril Jainlal</h1>
-  <p>Enhancing Networks, One Parameter at a Time!</p>
-  <p>MS in Engineering Management (Big Data Analytics) | Data Scientist & ML Engineer</p>
+  <p>MS in Engineering Management | Data Scientist & ML Engineer</p>
   <div class="links">
     <a href="#">LinkedIn</a> | 
+    <a href="mailto:d.venmanasseriljainlal.1104@westcliff.edu">Email</a> | 
     <a href="#">GitHub</a> | 
-    <a href="#">Portfolio</a> | 
-    <a href="#">Medium</a>
+    <a href="#">Medium</a> | 
+    <a href="#">Portfolio</a>
   </div>
 </header>
 
 <div class="container">
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I am currently pursuing a Master’s in Engineering Management (Big Data Analytics) with a strong foundation in AI, ML, and 
-      data-driven solutions. I have 4.6+ years of experience in industry, working on impactful projects in ML, AI, supply chain 
-      analytics, and backend engineering. My passion lies in building scalable solutions, optimizing workflows, and contributing 
-      to research and innovation.
-    </p>
-  </section>
 
-  <section id="highlights">
-    <h2>Key Highlights</h2>
-    <ul class="key-highlights">
-      <li>💡 Built predictive lead scoring models and automated ML pipelines on GCP Vertex AI, improving selection accuracy by 8%.</li>
-      <li>💡 Optimized power and memory usage for ML pipelines, reducing inference time by <span class="highlight">50%</span> and model size by <span class="highlight">40%</span>.</li>
-      <li>💡 Developed edge-cloud collaborative inference techniques, achieving a <span class="highlight">73%</span> reduction in latency for VGG16 network inference.</li>
-      <li>💡 Ideated and incubated 4+ innovations into patents.</li>
-      <li>💡 Contributed to 3 international publications and served as a reviewer at CVPR 2024.</li>
-    </ul>
-  </section>
-
-  <section id="patents">
-    <h2>Patents</h2>
+  <!-- Education -->
+  <section id="education">
+    <h2>Education</h2>
     <ul>
-      <li>A Method And System For Determining An Action In a Video – CS filing complete.</li>
-      <li>System and Method for Light-weight Eye Fixation Prediction Using Attention Guided Image Priors – CS filing complete.</li>
-      <li>Software System & Method for Single Frame Based Panning Photograph Generation – CS filing complete.</li>
-      <li>Semi-Supervised Framework With Progressive Pseudo-Labelling For Animal Facial Action Recognition – CS filing complete.</li>
+      <li>
+        <strong>MS in Engineering Management</strong>, Westcliff University, California, USA | 10/2025 – 10/2027<br>
+        Coursework: Engineering management, Big Data Analytics.
+      </li>
+      <li>
+        <strong>MTech in Computer Science</strong> (AI & ML), VIT University, Vellore, India | 08/2019 - 07/2021<br>
+        Coursework: Algorithms, Data Structures, Big Data, Databases, Inference, Statistics, AI, ML, RL.
+      </li>
     </ul>
   </section>
 
-  <section id="publications">
-    <h2>Research & Publications</h2>
+  <!-- Professional Experience -->
+  <section id="experience">
+    <h2>Professional Experience</h2>
     <ul>
-      <li>PawFACS: Leveraging Semi-Supervised Learning for Pet Facial Action Recognition (BMVC 2024).</li>
-      <li>Reviewer at 12th Women in Computer Vision Workshop (CVPR 2024).</li>
-      <li>A Light-Weight Human Eye Fixation Solution for Smartphone Applications (CVPR 2023).</li>
-      <li>FixPNet: Attention Guided Fixation Map Prediction With Explicit Image Priors (CVPR 2023).</li>
-      <li>Twitter Bot Detection and Ranking using Supervised Machine Learning Models (ICDSAAI 2022).</li>
+      <li>
+        <strong>Data Scientist</strong>, Ford Motors | 08/2023 - 07/2025
+        <ul>
+          <li>Designed dashboards for supplier, part price, and commercial adjustment cost using Qlik Sense, Alteryx, Dataform, and BigQuery.</li>
+          <li>Developed Lane Rate estimation dashboard using ML and data engineering with Alteryx, GCP, and Dataform.</li>
+          <li>Created amortization opportunity dashboard using Gemini LLM, resulting in $23M potential savings; recognized by the team.</li>
+          <li>Developed Nuts and Bolts Price Estimation Dashboard using Random Forest and Power BI, achieving $5M in savings.</li>
+          <li>Received Recognition for Excellence and Recognition for Collaboration from Ford.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Software Engineer & ML Engineer (GIG)</strong>, Philips Healthcare | 07/2021 - 07/2023
+        <ul>
+          <li>Developed features for patient monitor support software using C#, .NET, and gRPC.</li>
+          <li>Replaced Perl scripts with C# code, enhancing performance by 25%.</li>
+          <li>Implemented test automation project, reducing manual testing by 60%.</li>
+          <li>Developed patient monitor simulator, reducing testing complexity by 80%.</li>
+          <li>Performed risk analysis using ML algorithms and statistical methods including Monte Carlo simulation.</li>
+          <li>Generated synthetic data and forecasted risk metrics using Random Forest algorithm.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Deep Learning Research Intern</strong>, Philips Healthcare | 09/2020 - 07/2021
+        <ul>
+          <li>Developed deep learning models for medical image segmentation (YOLOv3, nnU-Net) using PyTorch, achieving 89% accuracy.</li>
+          <li>Annotated 900 ultrasound images and created masks using Python & OpenCV in collaboration with doctors.</li>
+        </ul>
+      </li>
     </ul>
   </section>
 
+  <!-- Projects -->
   <section id="projects">
-    <h2>Personal Projects</h2>
+    <h2>Projects</h2>
     <ul>
-      <li>
-        <strong>Data Analysis on the Impact of COVID-19 on the World Economy</strong> – Analyzed GDP, unemployment, labor costs, and trade indicators to quantify the pandemic’s impact. <br>
-        <em>Tech Stack:</em> Pandas, Matplotlib, Seaborn, Keras, NumPy. <a href="#">Project Link</a>
-      </li>
-      <li>
-        <strong>Twitter Bot Detection and Ranking</strong> – Built an algorithm to classify Twitter accounts as bots or genuine users and rank them by impact. <br>
-        <em>Tech Stack:</em> Pandas, TensorFlow, Keras, NumPy, NLTK, SciPy, Seaborn. <a href="#">Project Link</a>
-      </li>
+      <li><strong>Agentic AI Used Car Inspection Agent:</strong> Autonomous agent using CV & LLMs to automate used car inspections; integrated VLM for real-time defect detection.</li>
+      <li><strong>Real-Time Emotion Classifier:</strong> High-speed facial expression recognition system using CNNs, PyTorch, OpenCV; classifies 7 core emotions in live video streams.</li>
+      <li><strong>Raspberry Pi Telegram Chatbot:</strong> Chatbot integrating NLP intents with Telegram API.</li>
+      <li><strong>Consolidation Center Selection Optimization:</strong> Python-based LP optimization model using PuLP; logic transferable to Gurobi/CPLEX.</li>
     </ul>
   </section>
+
+  <!-- Blogs / Publications -->
+  <section id="publications">
+    <h2>Blogs / Publications</h2>
+    <ul>
+      <li>Solving Real Logistics Problems: Building a Consolidation Center Optimizer in Python</li>
+      <li>Evaluating Sampling Efficiency in Bayesian Inference: MCMC vs. Hamiltonian Monte Carlo</li>
+      <li>The Ultimate Guide: Hybrid Anomaly Detection with Autoencoders & XGBoost</li>
+    </ul>
+  </section>
+
+  <!-- Core Competencies -->
+  <section id="skills">
+    <h2>Core Competencies</h2>
+    <ul>
+      <li><strong>Languages & Tools:</strong> Python, R, C#, C, SQL</li>
+      <li><strong>Libraries:</strong> PyTorch, TensorFlow, Scikit-learn, Pandas, Sklearn, Matplotlib, NLTK, Spark, NumPy, Transformers, LLM</li>
+      <li><strong>Tools:</strong> Git, Jira (Agile), CI/CD, Jupyter, Docker, MySQL, Qlik Sense, Power BI, Alteryx</li>
+    </ul>
+  </section>
+
 </div>
 
 <footer>
-  <p>📧 Contact me: <a href="mailto:deepthivj96@gmail.com">deepthivj96@gmail.com</a></p>
+  <p>📧 Contact me: <a href="mailto:d.venmanasseriljainlal.1104@westcliff.edu">d.venmanasseriljainlal.1104@westcliff.edu</a></p>
 </footer>
 
 </body>
