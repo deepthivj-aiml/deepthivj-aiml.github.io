@@ -1,162 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Deepthi VJ | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background-color: #f0f4f8;
-      color: #333;
-      scroll-behavior: smooth;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deepthi VJ | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f0f4f8;
+    color: #333;
+    scroll-behavior: smooth;
+  }
 
-    /* Header / Hero */
-    header {
-      background: linear-gradient(135deg, #1e3a8a, #2563eb);
-      color: #fff;
-      text-align: center;
-      padding: 3rem 1rem;
-    }
+  header {
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    color: #fff;
+    text-align: center;
+    padding: 3rem 1rem;
+  }
 
-    header h1 {
-      margin: 0.5rem 0;
-      font-size: 2.5rem;
-      font-weight: 700;
-    }
+  header h1 {
+    margin: 0.5rem 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
 
-    header h2 {
-      font-size: 1.4rem;
-      font-weight: 500;
-      margin: 0.3rem 0 1rem 0;
-      color: #ffedd5;
-    }
+  header h2 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 0.3rem 0 1rem 0;
+    color: #ffedd5;
+  }
 
-    .profile-img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      border: 4px solid #fff;
-      object-fit: cover;
-      margin-bottom: 1rem;
-    }
+  .profile-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
 
-    .links a {
-      display: inline-block;
-      margin: 0.5rem 1rem;
-      padding: 0.6rem 1.2rem;
-      border-radius: 25px;
-      font-weight: 600;
-      text-decoration: none;
-      color: #fff;
-      transition: all 0.3s ease;
-    }
+  .links a {
+    display: inline-block;
+    margin: 0.5rem 1rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+  }
 
-    .links a[href*="linkedin"] { background-color: #0077b5; }
-    .links a[href*="github"]   { background-color: #333; }
-    .links a[href*="medium"]   { background-color: #00ab6c; }
+  .links a[href*="linkedin"] { background-color: #0077b5; }
+  .links a[href*="github"]   { background-color: #333; }
+  .links a[href*="medium"]   { background-color: #00ab6c; }
 
-    .links a:hover {
-      opacity: 0.85;
-      transform: translateY(-2px);
-    }
+  .links a:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+  }
 
-    .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
+  .container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
 
-    section {
-      margin-bottom: 2rem;
-    }
+  section {
+    margin-bottom: 2rem;
+  }
 
-    h2 {
-      color: #1e3a8a;
-      border-bottom: 3px solid #1e3a8a;
-      padding-bottom: 0.3rem;
-      margin-bottom: 1rem;
-    }
+  h2 {
+    color: #1e3a8a;
+    border-bottom: 3px solid #1e3a8a;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1rem;
+  }
 
-    ul {
-      padding-left: 1.2rem;
-    }
+  ul {
+    padding-left: 1.2rem;
+  }
 
-    ul li {
-      margin-bottom: 0.8rem;
-    }
+  ul li {
+    margin-bottom: 0.8rem;
+  }
 
-    a {
-      color: #1e3a8a;
-      text-decoration: none;
-    }
+  a {
+    color: #1e3a8a;
+    text-decoration: none;
+  }
 
-    a:hover {
-      text-decoration: underline;
-    }
+  a:hover {
+    text-decoration: underline;
+  }
 
-    .resume-container {
-      text-align: center;
-      margin-top: 1rem;
-    }
+  .resume-container {
+    text-align: center;
+    margin-top: 1rem;
+  }
 
-    .resume-container iframe {
-      width: 100%;
-      height: 600px;
-      border: 2px solid #1e3a8a;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-    }
+  .resume-container iframe {
+    width: 100%;
+    height: 600px;
+    border: 2px solid #1e3a8a;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
 
-    .download-btn {
-      display: inline-block;
-      padding: 0.6rem 1.2rem;
-      background-color: #1e3a8a;
-      color: #fff;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
+  .download-btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background-color: #1e3a8a;
+    color: #fff;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
 
-    .download-btn:hover {
-      background-color: #111f50;
-      transform: translateY(-2px);
-    }
+  .download-btn:hover {
+    background-color: #111f50;
+    transform: translateY(-2px);
+  }
 
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      background-color: #1e3a8a;
-      color: white;
-    }
+  footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #1e3a8a;
+    color: white;
+  }
 
-    footer a {
-      color: #ffd700;
-      text-decoration: none;
-    }
+  footer a {
+    color: #ffd700;
+    text-decoration: none;
+  }
 
-    footer a:hover {
-      text-decoration: underline;
-    }
+  footer a:hover {
+    text-decoration: underline;
+  }
 
-    @media (max-width: 600px) {
-      .profile-img { width: 120px; height: 120px; }
-      .resume-container iframe { height: 400px; }
-    }
-  </style>
+  @media (max-width: 600px) {
+    .profile-img { width: 120px; height: 120px; }
+    .resume-container iframe { height: 400px; }
+  }
+</style>
 </head>
 <body>
 
 <header>
   <img src="https://github.com/deepthivj-aiml/Resume/raw/main/ChatGPT%20Image%20Jan%2022%2C%202026%2C%2002_28_33%20PM.png" alt="Deepthi VJ" class="profile-img">
   <h1>Deepthi Venmanasseril Jainlal</h1>
-  <h2>Turning Data into Impactful Decisions | Data Scientist & ML Engineer</h2>
+  <h2>Data Scientist & ML Engineer | MS in Engineering Management</h2>
   <div class="links">
     <a href="https://www.linkedin.com/in/deepthi-v-j-b06827105/" target="_blank">LinkedIn</a>
     <a href="https://github.com/deepthivj-aiml" target="_blank">GitHub</a>
@@ -166,22 +165,20 @@
 
 <div class="container">
 
-  <!-- Education -->
-  <section id="education">
-    <h2>Education</h2>
-    <ul>
-      <li><strong>MS in Engineering Management</strong>, Westcliff University, California, USA | 10/2025 – 10/2027</li>
-      <li><strong>MTech in Computer Science (AI & ML)</strong>, VIT University, Vellore, India | 08/2019 - 07/2021</li>
-    </ul>
+  <!-- About Me -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I am a Data Scientist and ML Engineer with experience in AI/ML, data analytics, and software development. I build intelligent systems that optimize processes, forecast trends, and extract actionable insights from data. Passionate about leveraging machine learning to solve real-world problems and improve business outcomes.</p>
   </section>
 
-  <!-- Professional Experience -->
-  <section id="experience">
-    <h2>Professional Experience</h2>
+  <!-- Key Highlights -->
+  <section id="highlights">
+    <h2>Key Highlights</h2>
     <ul>
-      <li><strong>Data Scientist</strong>, Ford Motors | 08/2023 - 07/2025</li>
-      <li><strong>Software Engineer & ML Engineer (GIG)</strong>, Philips Healthcare | 07/2021 - 07/2023</li>
-      <li><strong>Deep Learning Research Intern</strong>, Philips Healthcare | 09/2020 - 07/2021</li>
+      <li>Developed dashboards and ML models at Ford Motors, delivering multi-million $ savings.</li>
+      <li>Built software solutions at Philips Healthcare, automating testing and improving system efficiency.</li>
+      <li>Worked on deep learning research projects achieving high-accuracy medical image segmentation.</li>
+      <li>Proficient in Python, R, C#, SQL, PyTorch, TensorFlow, Scikit-learn, Pandas, NumPy, Power BI, and Qlik Sense.</li>
     </ul>
   </section>
 
@@ -189,34 +186,24 @@
   <section id="projects">
     <h2>Projects</h2>
     <ul>
-      <li>Agentic AI Used Car Inspection Agent</li>
-      <li>Real-Time Emotion Classifier</li>
-      <li>Raspberry Pi Telegram Chatbot</li>
-      <li>Consolidation Center Selection Optimization</li>
+      <li>Agentic AI Used Car Inspection – CV & LLM integration for real-time defect detection.</li>
+      <li>Real-Time Emotion Classifier – Facial expression recognition using CNNs & PyTorch.</li>
+      <li>Raspberry Pi Telegram Chatbot – NLP-based automated chatbot.</li>
+      <li>Consolidation Center Optimization – LP optimization using Python & PuLP.</li>
     </ul>
   </section>
 
-  <!-- Blogs / Publications -->
+  <!-- Publications / Blogs -->
   <section id="publications">
-    <h2>Blogs / Publications</h2>
+    <h2>Publications & Blogs</h2>
     <ul>
       <li><a href="https://medium.com/@deepthivj96/evaluating-sampling-efficiency-in-bayesian-inference-a-benchmark-of-random-walk-metropolis-vs-f85c34d1682b" target="_blank">Evaluating Sampling Efficiency in Bayesian Inference</a></li>
       <li><a href="https://medium.com/operations-research-bit/the-ultimate-guide-hybrid-anomaly-detection-with-autoencoders-xgboost-1a565bdc6710" target="_blank">The Ultimate Guide: Hybrid Anomaly Detection</a></li>
-      <li><a href="https://medium.com/operations-research-bit/solving-real-logistics-problems-building-a-consolidation-center-optimizer-in-python-7eaa2597e61d" target="_blank">Solving Real Logistics Problems: Consolidation Center Optimizer</a></li>
+      <li><a href="https://medium.com/operations-research-bit/solving-real-logistics-problems-building-a-consolidation-center-optimizer-in-python-7eaa2597e61d" target="_blank">Solving Real Logistics Problems</a></li>
     </ul>
   </section>
 
-  <!-- Skills -->
-  <section id="skills">
-    <h2>Core Competencies</h2>
-    <ul>
-      <li><strong>Languages & Tools:</strong> Python, R, C#, C, SQL</li>
-      <li><strong>Libraries:</strong> PyTorch, TensorFlow, Scikit-learn, Pandas, NumPy</li>
-      <li><strong>Tools:</strong> Git, Jira, Docker, Power BI, Qlik Sense</li>
-    </ul>
-  </section>
-
-  <!-- Resume -->
+  <!-- Resume Section -->
   <section id="resume">
     <h2>Resume</h2>
     <div class="resume-container">
@@ -225,10 +212,17 @@
     </div>
   </section>
 
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:d.venmanasseriljainlal.1104@westcliff.edu">d.venmanasseriljainlal.1104@westcliff.edu</a></p>
+    <p>Phone: +1 (Your Phone Number Here)</p>
+  </section>
+
 </div>
 
 <footer>
-  <p>📧 Contact: <a href="mailto:d.venmanasseriljainlal.1104@westcliff.edu">d.venmanasseriljainlal.1104@westcliff.edu</a></p>
+  <p>📧 Contact: <a href="mailto:d.venmanasseriljainlal.1104@westcliff.edu">d.venmanasseriljainlal.1104@westcliff.edu</a> | 📞 +1 (Your Phone Number Here)</p>
 </footer>
 
 </body>
