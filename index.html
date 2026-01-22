@@ -11,34 +11,77 @@
       margin: 0;
       padding: 0;
       line-height: 1.6;
-      background-color: #f8f9fa;
+      background-color: #f0f4f8;
       color: #333;
+      scroll-behavior: smooth;
     }
 
+    /* Header / Hero */
     header {
-      background-color: #1e3a8a;
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
       color: #fff;
-      padding: 2rem;
       text-align: center;
+      padding: 3rem 1rem;
+      position: relative;
+      overflow: hidden;
     }
 
     header h1 {
-      margin: 0.2rem 0;
-      font-size: 2rem;
+      margin: 0.5rem 0;
+      font-size: 2.5rem;
+      font-weight: 700;
+      animation: fadeInDown 1s ease-in-out;
     }
 
-    header p {
-      margin: 0.2rem 0;
+    header h2 {
+      font-size: 1.5rem;
       font-weight: 500;
+      margin: 0.3rem 0 1rem 0;
+      color: #ffedd5;
+      animation: fadeInUp 1.2s ease-in-out;
+    }
+
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
     .profile-img {
       width: 150px;
       height: 150px;
       border-radius: 50%;
-      border: 3px solid #fff;
+      border: 4px solid #fff;
       object-fit: cover;
       margin-bottom: 1rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .links a {
+      display: inline-block;
+      margin: 0.5rem 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #fff;
+      color: #1e3a8a;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .links a:hover {
+      background-color: #2563eb;
+      color: #fff;
+      transform: translateY(-2px);
     }
 
     .container {
@@ -49,11 +92,12 @@
 
     section {
       margin-bottom: 2rem;
+      animation: fadeInUp 1s ease-in-out;
     }
 
     h2 {
       color: #1e3a8a;
-      border-bottom: 2px solid #1e3a8a;
+      border-bottom: 3px solid #1e3a8a;
       padding-bottom: 0.3rem;
       margin-bottom: 1rem;
     }
@@ -80,18 +124,7 @@
       color: #e11d48;
     }
 
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #1e3a8a;
-      color: white;
-    }
-
-    .links a {
-      margin: 0 0.5rem;
-    }
-
-    /* Resume section */
+    /* Resume Section */
     .resume-container {
       text-align: center;
       margin-top: 1rem;
@@ -100,7 +133,8 @@
     .resume-container iframe {
       width: 100%;
       height: 600px;
-      border: 1px solid #ccc;
+      border: 2px solid #1e3a8a;
+      border-radius: 10px;
       margin-bottom: 1rem;
     }
 
@@ -109,27 +143,45 @@
       padding: 0.6rem 1.2rem;
       background-color: #1e3a8a;
       color: #fff;
-      border-radius: 5px;
+      border-radius: 25px;
       text-decoration: none;
       font-weight: 600;
+      transition: all 0.3s ease;
     }
 
     .download-btn:hover {
       background-color: #111f50;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: #1e3a8a;
+      color: white;
+    }
+
+    footer a {
+      color: #ffd700;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
 
     @media (max-width: 600px) {
       header h1 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
       }
 
-      header p {
-        font-size: 0.9rem;
+      header h2 {
+        font-size: 1.1rem;
       }
 
       .profile-img {
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
       }
 
       .resume-container iframe {
@@ -143,13 +195,13 @@
 <header>
   <img src="/mnt/data/a204f619-7e1d-41e5-bac1-2e0f66f54cb6.png" alt="Deepthi VJ" class="profile-img">
   <h1>Deepthi Venmanasseril Jainlal</h1>
-  <p>MS in Engineering Management | Data Scientist & ML Engineer</p>
+  <h2>Turning Data into Impactful Decisions | Data Scientist & ML Engineer</h2>
   <div class="links">
-    <a href="#">LinkedIn</a> | 
-    <a href="mailto:d.venmanasseriljainlal.1104@westcliff.edu">Email</a> | 
-    <a href="#">GitHub</a> | 
-    <a href="#">Medium</a> | 
-    <a href="#">Portfolio</a>
+    <a href="https://www.linkedin.com/in/deepthivj/" target="_blank">LinkedIn</a>
+    <a href="mailto:d.venmanasseriljainlal.1104@westcliff.edu">Email</a>
+    <a href="https://github.com/deepthivj" target="_blank">GitHub</a>
+    <a href="https://medium.com/@deepthivj" target="_blank">Medium</a>
+    <a href="#portfolio">Portfolio</a>
   </div>
 </header>
 
@@ -240,7 +292,6 @@
   <section id="resume">
     <h2>Resume</h2>
     <div class="resume-container">
-      <!-- Embed your PDF resume -->
       <iframe src="resume.pdf" type="application/pdf"></iframe>
       <br>
       <a href="resume.pdf" download class="download-btn">Download Resume</a>
