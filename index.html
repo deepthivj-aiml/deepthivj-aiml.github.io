@@ -33,8 +33,8 @@
     }
 
     .profile-img {
-      width: 120px;
-      height: 120px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       border: 3px solid #fff;
       object-fit: cover;
@@ -91,6 +91,33 @@
       margin: 0 0.5rem;
     }
 
+    /* Resume section */
+    .resume-container {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .resume-container iframe {
+      width: 100%;
+      height: 600px;
+      border: 1px solid #ccc;
+      margin-bottom: 1rem;
+    }
+
+    .download-btn {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      background-color: #1e3a8a;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .download-btn:hover {
+      background-color: #111f50;
+    }
+
     @media (max-width: 600px) {
       header h1 {
         font-size: 1.5rem;
@@ -101,8 +128,12 @@
       }
 
       .profile-img {
-        width: 90px;
-        height: 90px;
+        width: 100px;
+        height: 100px;
+      }
+
+      .resume-container iframe {
+        height: 400px;
       }
     }
   </style>
@@ -110,7 +141,7 @@
 <body>
 
 <header>
-  <img src="your-photo.jpg" alt="Deepthi VJ" class="profile-img">
+  <img src="/mnt/data/a204f619-7e1d-41e5-bac1-2e0f66f54cb6.png" alt="Deepthi VJ" class="profile-img">
   <h1>Deepthi Venmanasseril Jainlal</h1>
   <p>MS in Engineering Management | Data Scientist & ML Engineer</p>
   <div class="links">
@@ -203,6 +234,17 @@
       <li><strong>Libraries:</strong> PyTorch, TensorFlow, Scikit-learn, Pandas, Sklearn, Matplotlib, NLTK, Spark, NumPy, Transformers, LLM</li>
       <li><strong>Tools:</strong> Git, Jira (Agile), CI/CD, Jupyter, Docker, MySQL, Qlik Sense, Power BI, Alteryx</li>
     </ul>
+  </section>
+
+  <!-- Resume Section -->
+  <section id="resume">
+    <h2>Resume</h2>
+    <div class="resume-container">
+      <!-- Embed your PDF resume -->
+      <iframe src="resume.pdf" type="application/pdf"></iframe>
+      <br>
+      <a href="resume.pdf" download class="download-btn">Download Resume</a>
+    </div>
   </section>
 
 </div>
