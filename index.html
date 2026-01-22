@@ -1,220 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Deepthi VJ | Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-  body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f4f8;
-    color: #333;
-    line-height: 1.6;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deepthi VJ | AI & Data Science Portfolio</title>
 
-  header {
-    background: linear-gradient(135deg, #1e3a8a, #2563eb);
-    text-align: center;
-    color: #fff;
-    padding: 3rem 1rem;
-  }
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-  header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-  }
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
 
-  header h2 {
-    font-size: 1.3rem;
-    font-weight: 500;
-    color: #ffedd5;
-    margin-bottom: 1rem;
-  }
+    header {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: #fff;
+      text-align: center;
+      padding: 3.5rem 1rem;
+    }
 
-  .profile-img {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    border: 4px solid #fff;
-    object-fit: cover;
-    margin-bottom: 1rem;
-  }
+    .profile-img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
 
-  .links a {
-    display: inline-block;
-    margin: 0.5rem 1rem;
-    padding: 0.6rem 1.2rem;
-    border-radius: 25px;
-    font-weight: 600;
-    text-decoration: none;
-    color: #fff;
-    transition: all 0.3s ease;
-  }
+    header h1 {
+      margin: 0.5rem 0 0.3rem;
+      font-size: 2.3rem;
+    }
 
-  .links a[href*="linkedin"] { background-color: #0077b5; }
-  .links a[href*="github"]   { background-color: #333; }
-  .links a[href*="medium"]   { background-color: #00ab6c; }
+    .headline {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      opacity: 0.95;
+    }
 
-  .links a:hover { opacity: 0.85; transform: translateY(-2px); }
+    header p {
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
 
-  .container {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-  }
+    .links a {
+      color: #fff;
+      margin: 0 0.6rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
 
-  h2.section-title {
-    color: #1e3a8a;
-    border-bottom: 3px solid #1e3a8a;
-    padding-bottom: 0.3rem;
-    margin-bottom: 1rem;
-  }
+    .links a:hover {
+      text-decoration: underline;
+    }
 
-  ul { padding-left: 1.2rem; }
-  ul li { margin-bottom: 1rem; }
+    .container {
+      max-width: 1000px;
+      margin: 2.5rem auto;
+      padding: 0 1.2rem;
+    }
 
-  a { color: #1e3a8a; text-decoration: none; }
-  a:hover { text-decoration: underline; }
+    section {
+      margin-bottom: 3rem;
+    }
 
-  .resume-container {
-    text-align: center;
-    margin-top: 1rem;
-  }
+    h2 {
+      color: #1e3a8a;
+      border-bottom: 2px solid #1e3a8a;
+      padding-bottom: 0.4rem;
+      margin-bottom: 1.2rem;
+    }
 
-  .resume-container iframe {
-    width: 100%;
-    height: 700px;
-    border: 2px solid #1e3a8a;
-    border-radius: 10px;
-    margin-bottom: 1rem;
-  }
+    ul {
+      padding-left: 1.2rem;
+    }
 
-  .download-btn {
-    display: inline-block;
-    padding: 0.6rem 1.2rem;
-    background-color: #1e3a8a;
-    color: #fff;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-  }
+    li {
+      margin-bottom: 1rem;
+    }
 
-  .download-btn:hover { background-color: #111f50; transform: translateY(-2px); }
+    .project {
+      margin-bottom: 2rem;
+    }
 
-  footer {
-    text-align: center;
-    padding: 1.5rem;
-    background-color: #1e3a8a;
-    color: white;
-  }
+    .project a {
+      color: #2563eb;
+      font-weight: 600;
+      text-decoration: none;
+    }
 
-  footer a { color: #ffd700; text-decoration: none; }
-  footer a:hover { text-decoration: underline; }
+    .project a:hover {
+      text-decoration: underline;
+    }
 
-  @media (max-width: 600px) {
-    .profile-img { width: 120px; height: 120px; }
-    .resume-container iframe { height: 400px; }
-  }
-</style>
+    iframe {
+      width: 100%;
+      height: 650px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    footer {
+      background: #1e3a8a;
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    footer a {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.7rem;
+      }
+      .headline {
+        font-size: 1rem;
+      }
+      iframe {
+        height: 450px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
 <header>
-  <img src="https://github.com/deepthivj-aiml/Resume/raw/main/ChatGPT%20Image%20Jan%2022%2C%202026%2C%2002_28_33%20PM.png" alt="Deepthi VJ" class="profile-img">
+  <img src="https://raw.githubusercontent.com/deepthivj-aiml/Resume/main/ChatGPT%20Image%20Jan%2022%2C%202026%2C%2002_28_33%20PM.png"
+       alt="Deepthi VJ" class="profile-img">
+
   <h1>Deepthi Venmanasseril Jainlal</h1>
-  <h2>Data Scientist & ML Engineer | MS in Engineering Management</h2>
+
+  <!-- Catchy Selling Headline -->
+  <div class="headline">
+    Engineering Intelligent Systems — From Data to Deployment
+  </div>
+
+  <p>MS Engineering Management | Data Scientist | ML Engineer</p>
+
   <div class="links">
-    <a href="https://www.linkedin.com/in/deepthi-v-j-b06827105/" target="_blank">LinkedIn</a>
-    <a href="https://github.com/deepthivj-aiml" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/deepthi-v-j-b06827105/" target="_blank">LinkedIn</a> |
+    <a href="https://github.com/deepthivj-aiml" target="_blank">GitHub</a> |
     <a href="https://medium.com/@deepthivj96" target="_blank">Medium</a>
   </div>
 </header>
 
 <div class="container">
 
-  <!-- About Me -->
-  <section id="about">
-    <h2 class="section-title">About Me</h2>
-    <p>I am currently pursuing a Master’s in Engineering Management at Westcliff University with a strong foundation in AI/ML and software engineering. I enjoy building practical, scalable solutions that solve real-world problems using data and machine learning.</p>
-    <p>I have experience building models and dashboards that optimize decision‑making and deliver insights that drive business value.</p>
+  <!-- About -->
+  <section>
+    <h2>About Me</h2>
+    <p>
+      I am a Data Scientist and ML Engineer with industry experience across healthcare,
+      automotive, and supply chain domains. I have worked on real-world AI systems
+      spanning machine learning, deep learning, computer vision, and optimization.
+    </p>
+    <p>
+      I have hands-on experience across the full machine learning lifecycle including
+      data preprocessing, feature engineering, model training, evaluation, deployment,
+      and CI/CD integration to support scalable and reliable ML workflows in production environments.
+    </p>
   </section>
 
-  <!-- Key Highlights -->
-  <section id="highlights">
-    <h2 class="section-title">Key Highlights</h2>
+  <!-- Experience -->
+  <section>
+    <h2>Professional Experience</h2>
     <ul>
-      <li>Built ML & analytical solutions at Ford Motors that contributed to multi‑million dollar savings.</li>
-      <li>Developed software features and automated testing frameworks at Philips Healthcare to improve quality and reduce manual workload.</li>
-      <li>Hands‑on with Python, PyTorch, TensorFlow, Scikit‑learn, SQL, Power BI, and Qlik Sense.</li>
-      <li>Published technical content on Medium covering practical data & ML topics.</li>
+      <li>
+        <strong>Data Scientist – Ford Motors (2023–2025)</strong>
+        <ul>
+          <li>Designed and deployed ML-driven dashboards for supplier pricing, amortization, and cost analytics.</li>
+          <li>Built end-to-end ML pipelines integrating data ingestion, modeling, validation, and deployment.</li>
+          <li>Integrated CI/CD practices to ensure reliable model updates and production stability.</li>
+          <li>Developed LLM-powered analytics solutions generating multi-million dollar savings.</li>
+        </ul>
+      </li>
+
+      <li>
+        <strong>Software Engineer & ML Engineer – Philips Healthcare (2021–2023)</strong>
+        <ul>
+          <li>Developed production-grade healthcare software using C#, .NET, and ML components.</li>
+          <li>Implemented automated testing pipelines reducing manual testing effort by 60%.</li>
+          <li>Applied ML and statistical techniques including Monte Carlo simulations for risk analysis.</li>
+        </ul>
+      </li>
+
+      <li>
+        <strong>Deep Learning Research Intern – Philips Healthcare (2020–2021)</strong>
+        <ul>
+          <li>Built deep learning models for medical image segmentation using PyTorch.</li>
+          <li>Collaborated with clinicians for dataset annotation and validation.</li>
+        </ul>
+      </li>
     </ul>
   </section>
 
   <!-- Projects -->
-  <section id="projects">
-    <h2 class="section-title">Projects</h2>
-    <ul>
-      <li>
-        <strong>5‑Day AI Agents Intensive Course</strong> – Repository covering foundational concepts and hands-on exercises related to AI agents, including reinforcement learning basics and practical Python examples.<br>
-        <a href="https://github.com/deepthivj-aiml/5-Day-AI-Agents-Intensive-course-Google" target="_blank">View on GitHub</a>
-      </li>
-      <li>
-        <strong>Consolidation Center Optimization (Gurobi)</strong> – Solves supply chain consolidation center selection using linear programming in Python with Gurobi, optimizing cost and flow decisions.<br>
-        <a href="https://github.com/deepthivj-aiml/Mathematical-Optimization/blob/main/Consolidation_Center_optimization_supply_Chain_gurobi.ipynb" target="_blank">Open Notebook</a>
-      </li>
-      <li>
-        <strong>Urban Sound Classification</strong> – Classifies environmental sounds using audio features (MFCCs) for applications like noise monitoring and smart cities.<br>
-        <a href="https://github.com/deepthivj-aiml/Projects-ML/blob/master/Urban_Sound_Classification.ipynb" target="_blank">Open Notebook</a>
-      </li>
-      <li>
-        <strong>Corona Probability Prediction</strong> – Predicts COVID-19 infection outcomes using ML/statistical models; includes preprocessing, modeling, and evaluation.<br>
-        <a href="https://github.com/deepthivj-aiml/hackethon/blob/master/corona-probability-prediction.ipynb" target="_blank">Open Notebook</a>
-      </li>
-      <li>
-        <strong>Video Anomaly Detection</strong> – Detects anomalous events in video streams using computer vision techniques, useful for surveillance and monitoring.<br>
-        <a href="https://github.com/deepthivj-aiml/Video-Anomaly-Detection-" target="_blank">View on GitHub</a>
-      </li>
-      <li>
-        <strong>Face Emotion Based Music Player</strong> – Detects facial emotions with CNNs and plays music accordingly.<br>
-        <a href="https://github.com/deepthivj-aiml/Projects-ML/blob/master/FACEEMOTIONBASEDMUSICPLAYER.ipynb" target="_blank">Open Notebook</a>
-      </li>
-    </ul>
-  </section>
+  <section>
+    <h2>Projects</h2>
 
-  <!-- Publications / Blogs -->
-  <section id="publications">
-    <h2 class="section-title">Publications & Blogs</h2>
-    <ul>
-      <li><a href="https://medium.com/@deepthivj96/evaluating-sampling-efficiency-in-bayesian-inference-a-benchmark-of-random-walk-metropolis-vs-f85c34d1682b" target="_blank">Evaluating Sampling Efficiency in Bayesian Inference</a></li>
-      <li><a href="https://medium.com/operations-research-bit/the-ultimate-guide-hybrid-anomaly-detection-with-autoencoders-xgboost-1a565bdc6710" target="_blank">The Ultimate Guide: Hybrid Anomaly Detection</a></li>
-      <li><a href="https://medium.com/operations-research-bit/solving-real-logistics-problems-building-a-consolidation-center-optimizer-in-python-7eaa2597e61d" target="_blank">Solving Real Logistics Problems</a></li>
-    </ul>
-  </section>
+    <div class="project">
+      <strong>AI Agents Intensive Course (Google)</strong><br>
+      <a href="https://github.com/deepthivj-aiml/5-Day-AI-Agents-Intensive-course-Google" target="_blank">GitHub</a>
+      <p>Designed autonomous AI agents capable of reasoning, planning, tool usage, and multi-step decision-making using LLMs.</p>
+    </div>
 
-  <!-- Resume Section -->
-  <section id="resume">
-    <h2 class="section-title">Resume</h2>
-    <div class="resume-container">
-      <iframe src="https://github.com/deepthivj-aiml/Resume/raw/main/Deepthi_VJ_Resume.pdf" type="application/pdf"></iframe>
-      <a href="https://github.com/deepthivj-aiml/Resume/raw/main/Deepthi_VJ_Resume.pdf" download class="download-btn">Download Resume</a>
+    <div class="project">
+      <strong>Supply Chain Consolidation Center Optimization</strong><br>
+      <a href="https://github.com/deepthivj-aiml/Mathematical-Optimization/blob/main/Consolidation_Center_optimization_supply_Chain_gurobi.ipynb" target="_blank">GitHub</a>
+      <p>Built an optimization model using Gurobi to minimize logistics and transportation costs under real-world constraints.</p>
+    </div>
+
+    <div class="project">
+      <strong>Urban Sound Classification</strong><br>
+      <a href="https://github.com/deepthivj-aiml/Projects-ML/blob/master/Urban_Sound_Classification.ipynb" target="_blank">GitHub</a>
+      <p>Developed an audio classification system using deep learning to identify real-world urban sound categories.</p>
+    </div>
+
+    <div class="project">
+      <strong>Face Emotion Based Music Player</strong><br>
+      <a href="https://github.com/deepthivj-aiml/Projects-ML/blob/master/FACEEMOTIONBASEDMUSICPLAYER.ipynb" target="_blank">GitHub</a>
+      <p>Implemented a computer vision pipeline that detects facial emotions and recommends music accordingly.</p>
+    </div>
+
+    <div class="project">
+      <strong>COVID-19 Probability Prediction</strong><br>
+      <a href="https://github.com/deepthivj-aiml/hackethon/blob/master/corona-probability-prediction.ipynb" target="_blank">GitHub</a>
+      <p>Created a supervised ML model to estimate COVID-19 infection probability based on symptom data.</p>
+    </div>
+
+    <div class="project">
+      <strong>Video Anomaly Detection</strong><br>
+      <a href="https://github.com/deepthivj-aiml/Video-Anomaly-Detection" target="_blank">GitHub</a>
+      <p>Built a deep learning system to detect abnormal activities in surveillance video streams.</p>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2 class="section-title">Contact</h2>
-    <p>Email: <a href="mailto:d.venmanasseriljainlal.1104@westcliff.edu">d.venmanasseriljainlal.1104@westcliff.edu</a></p>
-    <p>Phone: +1 805-514-0126</p>
+  <!-- Resume -->
+  <section>
+    <h2>Resume</h2>
+    <iframe src="https://raw.githubusercontent.com/deepthivj-aiml/Resume/main/Deepthi_VJ_Resume.pdf"></iframe>
+  </section>
+
+  <!-- Contact -->
+  <section>
+    <h2>Contact</h2>
+    <p><strong>Personal Email:</strong> deepthivj96@gmail.com</p>
+    <p><strong>Academic Email:</strong> d.venmanasseriljainlal.1104@westcliff.edu</p>
+    <p><strong>Phone:</strong> 8055140126</p>
   </section>
 
 </div>
 
 <footer>
-  <p>📧 Contact: <a href="mailto:d.venmanasseriljainlal.1104@westcliff.edu">d.venmanasseriljainlal.1104@westcliff.edu</a> | 📞 +1 805-514-0126</p>
+  <p>© 2026 Deepthi VJ | Built with ❤️ & AI</p>
 </footer>
 
 </body>
