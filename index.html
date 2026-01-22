@@ -22,33 +22,19 @@
       color: #fff;
       text-align: center;
       padding: 3rem 1rem;
-      position: relative;
-      overflow: hidden;
     }
 
     header h1 {
       margin: 0.5rem 0;
       font-size: 2.5rem;
       font-weight: 700;
-      animation: fadeInDown 1s ease-in-out;
     }
 
     header h2 {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: 500;
       margin: 0.3rem 0 1rem 0;
       color: #ffedd5;
-      animation: fadeInUp 1.2s ease-in-out;
-    }
-
-    @keyframes fadeInDown {
-      0% { opacity: 0; transform: translateY(-20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
     }
 
     .profile-img {
@@ -58,29 +44,25 @@
       border: 4px solid #fff;
       object-fit: cover;
       margin-bottom: 1rem;
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
     }
 
     .links a {
       display: inline-block;
       margin: 0.5rem 1rem;
-      padding: 0.5rem 1rem;
-      background-color: #fff;
-      color: #1e3a8a;
+      padding: 0.6rem 1.2rem;
       border-radius: 25px;
       font-weight: 600;
-      transition: all 0.3s ease;
       text-decoration: none;
+      color: #fff;
+      transition: all 0.3s ease;
     }
 
+    .links a[href*="linkedin"] { background-color: #0077b5; }
+    .links a[href*="github"]   { background-color: #333; }
+    .links a[href*="medium"]   { background-color: #00ab6c; }
+
     .links a:hover {
-      background-color: #2563eb;
-      color: #fff;
+      opacity: 0.85;
       transform: translateY(-2px);
     }
 
@@ -92,7 +74,6 @@
 
     section {
       margin-bottom: 2rem;
-      animation: fadeInUp 1s ease-in-out;
     }
 
     h2 {
@@ -119,12 +100,6 @@
       text-decoration: underline;
     }
 
-    .highlight {
-      font-weight: 600;
-      color: #e11d48;
-    }
-
-    /* Resume Section */
     .resume-container {
       text-align: center;
       margin-top: 1rem;
@@ -171,37 +146,21 @@
     }
 
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.8rem;
-      }
-
-      header h2 {
-        font-size: 1.1rem;
-      }
-
-      .profile-img {
-        width: 120px;
-        height: 120px;
-      }
-
-      .resume-container iframe {
-        height: 400px;
-      }
+      .profile-img { width: 120px; height: 120px; }
+      .resume-container iframe { height: 400px; }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <img src="/mnt/data/a204f619-7e1d-41e5-bac1-2e0f66f54cb6.png" alt="Deepthi VJ" class="profile-img">
+  <img src="https://github.com/deepthivj-aiml/Resume/raw/main/ChatGPT%20Image%20Jan%2022%2C%202026%2C%2002_28_33%20PM.png" alt="Deepthi VJ" class="profile-img">
   <h1>Deepthi Venmanasseril Jainlal</h1>
   <h2>Turning Data into Impactful Decisions | Data Scientist & ML Engineer</h2>
   <div class="links">
     <a href="https://www.linkedin.com/in/deepthivj/" target="_blank">LinkedIn</a>
-    <a href="mailto:d.venmanasseriljainlal.1104@westcliff.edu">Email</a>
     <a href="https://github.com/deepthivj" target="_blank">GitHub</a>
-    <a href="https://medium.com/@deepthivj" target="_blank">Medium</a>
-    <a href="#portfolio">Portfolio</a>
+    <a href="https://medium.com/@deepthivj96" target="_blank">Medium</a>
   </div>
 </header>
 
@@ -211,14 +170,8 @@
   <section id="education">
     <h2>Education</h2>
     <ul>
-      <li>
-        <strong>MS in Engineering Management</strong>, Westcliff University, California, USA | 10/2025 – 10/2027<br>
-        Coursework: Engineering management, Big Data Analytics.
-      </li>
-      <li>
-        <strong>MTech in Computer Science</strong> (AI & ML), VIT University, Vellore, India | 08/2019 - 07/2021<br>
-        Coursework: Algorithms, Data Structures, Big Data, Databases, Inference, Statistics, AI, ML, RL.
-      </li>
+      <li><strong>MS in Engineering Management</strong>, Westcliff University, California, USA | 10/2025 – 10/2027</li>
+      <li><strong>MTech in Computer Science (AI & ML)</strong>, VIT University, Vellore, India | 08/2019 - 07/2021</li>
     </ul>
   </section>
 
@@ -226,34 +179,9 @@
   <section id="experience">
     <h2>Professional Experience</h2>
     <ul>
-      <li>
-        <strong>Data Scientist</strong>, Ford Motors | 08/2023 - 07/2025
-        <ul>
-          <li>Designed dashboards for supplier, part price, and commercial adjustment cost using Qlik Sense, Alteryx, Dataform, and BigQuery.</li>
-          <li>Developed Lane Rate estimation dashboard using ML and data engineering with Alteryx, GCP, and Dataform.</li>
-          <li>Created amortization opportunity dashboard using Gemini LLM, resulting in $23M potential savings; recognized by the team.</li>
-          <li>Developed Nuts and Bolts Price Estimation Dashboard using Random Forest and Power BI, achieving $5M in savings.</li>
-          <li>Received Recognition for Excellence and Recognition for Collaboration from Ford.</li>
-        </ul>
-      </li>
-      <li>
-        <strong>Software Engineer & ML Engineer (GIG)</strong>, Philips Healthcare | 07/2021 - 07/2023
-        <ul>
-          <li>Developed features for patient monitor support software using C#, .NET, and gRPC.</li>
-          <li>Replaced Perl scripts with C# code, enhancing performance by 25%.</li>
-          <li>Implemented test automation project, reducing manual testing by 60%.</li>
-          <li>Developed patient monitor simulator, reducing testing complexity by 80%.</li>
-          <li>Performed risk analysis using ML algorithms and statistical methods including Monte Carlo simulation.</li>
-          <li>Generated synthetic data and forecasted risk metrics using Random Forest algorithm.</li>
-        </ul>
-      </li>
-      <li>
-        <strong>Deep Learning Research Intern</strong>, Philips Healthcare | 09/2020 - 07/2021
-        <ul>
-          <li>Developed deep learning models for medical image segmentation (YOLOv3, nnU-Net) using PyTorch, achieving 89% accuracy.</li>
-          <li>Annotated 900 ultrasound images and created masks using Python & OpenCV in collaboration with doctors.</li>
-        </ul>
-      </li>
+      <li><strong>Data Scientist</strong>, Ford Motors | 08/2023 - 07/2025</li>
+      <li><strong>Software Engineer & ML Engineer (GIG)</strong>, Philips Healthcare | 07/2021 - 07/2023</li>
+      <li><strong>Deep Learning Research Intern</strong>, Philips Healthcare | 09/2020 - 07/2021</li>
     </ul>
   </section>
 
@@ -261,10 +189,10 @@
   <section id="projects">
     <h2>Projects</h2>
     <ul>
-      <li><strong>Agentic AI Used Car Inspection Agent:</strong> Autonomous agent using CV & LLMs to automate used car inspections; integrated VLM for real-time defect detection.</li>
-      <li><strong>Real-Time Emotion Classifier:</strong> High-speed facial expression recognition system using CNNs, PyTorch, OpenCV; classifies 7 core emotions in live video streams.</li>
-      <li><strong>Raspberry Pi Telegram Chatbot:</strong> Chatbot integrating NLP intents with Telegram API.</li>
-      <li><strong>Consolidation Center Selection Optimization:</strong> Python-based LP optimization model using PuLP; logic transferable to Gurobi/CPLEX.</li>
+      <li>Agentic AI Used Car Inspection Agent</li>
+      <li>Real-Time Emotion Classifier</li>
+      <li>Raspberry Pi Telegram Chatbot</li>
+      <li>Consolidation Center Selection Optimization</li>
     </ul>
   </section>
 
@@ -272,36 +200,35 @@
   <section id="publications">
     <h2>Blogs / Publications</h2>
     <ul>
-      <li>Solving Real Logistics Problems: Building a Consolidation Center Optimizer in Python</li>
-      <li>Evaluating Sampling Efficiency in Bayesian Inference: MCMC vs. Hamiltonian Monte Carlo</li>
-      <li>The Ultimate Guide: Hybrid Anomaly Detection with Autoencoders & XGBoost</li>
+      <li><a href="https://medium.com/@deepthivj96/evaluating-sampling-efficiency-in-bayesian-inference-a-benchmark-of-random-walk-metropolis-vs-f85c34d1682b" target="_blank">Evaluating Sampling Efficiency in Bayesian Inference</a></li>
+      <li><a href="https://medium.com/operations-research-bit/the-ultimate-guide-hybrid-anomaly-detection-with-autoencoders-xgboost-1a565bdc6710" target="_blank">The Ultimate Guide: Hybrid Anomaly Detection</a></li>
+      <li><a href="https://medium.com/operations-research-bit/solving-real-logistics-problems-building-a-consolidation-center-optimizer-in-python-7eaa2597e61d" target="_blank">Solving Real Logistics Problems: Building a Consolidation Center Optimizer</a></li>
     </ul>
   </section>
 
-  <!-- Core Competencies -->
+  <!-- Skills -->
   <section id="skills">
     <h2>Core Competencies</h2>
     <ul>
       <li><strong>Languages & Tools:</strong> Python, R, C#, C, SQL</li>
-      <li><strong>Libraries:</strong> PyTorch, TensorFlow, Scikit-learn, Pandas, Sklearn, Matplotlib, NLTK, Spark, NumPy, Transformers, LLM</li>
-      <li><strong>Tools:</strong> Git, Jira (Agile), CI/CD, Jupyter, Docker, MySQL, Qlik Sense, Power BI, Alteryx</li>
+      <li><strong>Libraries:</strong> PyTorch, TensorFlow, Scikit-learn, Pandas, NumPy</li>
+      <li><strong>Tools:</strong> Git, Jira, Docker, Power BI, Qlik Sense</li>
     </ul>
   </section>
 
-  <!-- Resume Section -->
+  <!-- Resume -->
   <section id="resume">
     <h2>Resume</h2>
     <div class="resume-container">
-      <iframe src="resume.pdf" type="application/pdf"></iframe>
-      <br>
-      <a href="resume.pdf" download class="download-btn">Download Resume</a>
+      <iframe src="https://github.com/deepthivj-aiml/Resume/raw/main/Deepthi_VJ_Resume.pdf" type="application/pdf"></iframe>
+      <a href="https://github.com/deepthivj-aiml/Resume/raw/main/Deepthi_VJ_Resume.pdf" download class="download-btn">Download Resume</a>
     </div>
   </section>
 
 </div>
 
 <footer>
-  <p>📧 Contact me: <a href="mailto:d.venmanasseriljainlal.1104@westcliff.edu">d.venmanasseriljainlal.1104@westcliff.edu</a></p>
+  <p>📧 Contact: <a href="mailto:d.venmanasseriljainlal.1104@westcliff.edu">d.venmanasseriljainlal.1104@westcliff.edu</a></p>
 </footer>
 
 </body>
