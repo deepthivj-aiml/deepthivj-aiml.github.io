@@ -33,7 +33,10 @@
       margin-bottom: 1rem;
     }
 
-    h1 { margin: 0.4rem 0; font-size: 2.4rem; }
+    h1 { margin: 0.4rem 0; font-size: 2.4rem; color: #4b2e2e; } /* Dark brown */
+    h2 { color: #4b2e2e; border-bottom: 2px solid #4b2e2e; padding-bottom: 0.4rem; margin-bottom: 1.5rem; } /* Dark brown */
+    h3 { color: #4b2e2e; margin-top: 0; } /* Dark brown */
+
     .headline { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.8rem; }
     .links a { color: #000; margin: 0 0.7rem; font-weight: 600; text-decoration: none; }
     .links a:hover { text-decoration: underline; }
@@ -54,7 +57,6 @@
     }
 
     .container { max-width: 1100px; margin: 3rem auto; padding: 0 1.2rem; }
-    h2 { color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 0.4rem; margin-bottom: 1.5rem; }
     section { margin-bottom: 3.5rem; }
     ul { padding-left: 1.2rem; }
     ul li { margin-bottom: 0.8rem; }
@@ -85,7 +87,6 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       flex-shrink: 0;
     }
-    .highlight-details h3 { margin-top: 0; }
     .highlight-details ul { padding-left: 1.2rem; }
 
     /* Grid for projects/blogs */
@@ -113,7 +114,13 @@
     }
     .highlight-card a:hover, .project-card a:hover, .blog-card a:hover { text-decoration: underline; }
 
-    footer { background: #1e3a8a; color: white; text-align: center; padding: 1.5rem; }
+    footer { 
+      background: #fff8e7; /* Cream background */
+      color: #000; /* Black text */
+      text-align: center; 
+      padding: 1.5rem; 
+      font-weight: 600;
+    }
 
     @media (max-width: 768px) {
       .highlight-row {
@@ -137,7 +144,6 @@
 <body>
 
 <header>
-  <!-- Profile Photo -->
   <img src="https://raw.githubusercontent.com/deepthivj-aiml/Resume/main/ChatGPT%20Image%20Jan%2022%2C%202026%2C%2002_28_33%20PM.png" alt="Deepthi VJ" class="profile-img">
 
   <h1>Deepthi Venmanasseril Jainlal</h1>
@@ -157,14 +163,12 @@
 
 <div class="container">
 
-  <!-- About -->
   <section>
     <h2>About Me</h2>
     <p>I am a Data Scientist and ML Engineer with experience building real-world AI systems across healthcare, automotive, and supply chain domains.</p>
     <p>I work across the full ML lifecycle — from data preprocessing and model training to deployment and CI/CD integration — ensuring scalable and reliable ML solutions in production.</p>
   </section>
 
-  <!-- Experience Highlights -->
   <section>
     <h2>Experience & Highlights</h2>
 
@@ -196,7 +200,6 @@
 
   </section>
 
-  <!-- Publications / Blogs -->
   <section>
     <h2>Publications & Blogs</h2>
     <div class="blog-grid">
@@ -215,7 +218,6 @@
     </div>
   </section>
 
-  <!-- Projects -->
   <section>
     <h2>Projects</h2>
     <div class="project-grid">
@@ -252,7 +254,6 @@
     </div>
   </section>
 
-  <!-- Contact -->
   <section>
     <h2>Contact</h2>
     <p><strong>Email (Personal):</strong> deepthivj96@gmail.com</p>
