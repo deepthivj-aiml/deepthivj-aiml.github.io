@@ -16,11 +16,16 @@
       line-height: 1.6;
     }
 
-    header {
+    /* Header & Footer */
+    header, footer {
       background: #fff8e7; /* Cream background */
       color: #000; /* Text color black */
       text-align: center;
       padding: 4rem 1rem;
+    }
+
+    header *, footer * {
+      color: #000; /* Force all nested text to black */
     }
 
     /* Profile Photo */
@@ -38,8 +43,14 @@
     h3 { color: #4b2e2e; margin-top: 0; } /* Dark brown */
 
     .headline { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.8rem; }
-    .links a { color: #000; margin: 0 0.7rem; font-weight: 600; text-decoration: none; }
+    .links a {
+      color: #000; /* Header links black */
+      margin: 0 0.7rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
     .links a:hover { text-decoration: underline; }
+
     .cta-btn {
       display: inline-block;
       margin-top: 1.4rem;
@@ -115,11 +126,8 @@
     .highlight-card a:hover, .project-card a:hover, .blog-card a:hover { text-decoration: underline; }
 
     footer { 
-      background: #fff8e7; /* Cream background */
-      color: #000; /* Black text */
-      text-align: center; 
-      padding: 1.5rem; 
       font-weight: 600;
+      padding: 1.5rem;
     }
 
     @media (max-width: 768px) {
