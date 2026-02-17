@@ -1,280 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Deepthi VJ | AI & ML Engineer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<!DOCTYPE html> <html lang="en"> <head>   <meta charset="UTF-8" />   <meta name="viewport" content="width=device-width, initial-scale=1.0" />   <title>Deepthi VJ | AI & ML Engineer</title>   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">    <style>     html { scroll-behavior: smooth; }     body {       font-family: 'Inter', sans-serif;       margin: 0;       background: #f8f9fa;       color: #333;       line-height: 1.6;     }      /* Header & Footer */     header, footer {       background: #fff8e7; /* Cream background */       color: #000; /* Text color black */       text-align: center;       padding: 4rem 1rem;     }      header *, footer * {       color: #000; /* Force all nested text to black */     }      /* Profile Photo */     .profile-img {       width: 160px;       height: 160px;       border-radius: 50%;       border: 4px solid #000; /* Border changed to black for contrast */       object-fit: cover;       margin-bottom: 1rem;     }      h1 { margin: 0.4rem 0; font-size: 2.4rem; color: #4b2e2e; } /* Dark brown */     h2 { color: #4b2e2e; border-bottom: 2px solid #4b2e2e; padding-bottom: 0.4rem; margin-bottom: 1.5rem; } /* Dark brown */     h3 { color: #4b2e2e; margin-top: 0; } /* Dark brown */      .headline { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.8rem; }     .links a {       color: #000; /* Header links black */       margin: 0 0.7rem;       font-weight: 600;       text-decoration: none;     }     .links a:hover { text-decoration: underline; }      .cta-btn {       display: inline-block;       margin-top: 1.4rem;       padding: 0.7rem 1.6rem;       background: #000; /* Black button background */       color: #fff; /* White text */       border-radius: 25px;       font-weight: 700;       text-decoration: none;       transition: transform 0.2s ease, box-shadow 0.2s ease;     }     .cta-btn:hover {       transform: translateY(-3px);       box-shadow: 0 8px 20px rgba(0,0,0,0.15);     }      .container { max-width: 1100px; margin: 3rem auto; padding: 0 1.2rem; }     section { margin-bottom: 3.5rem; }     ul { padding-left: 1.2rem; }     ul li { margin-bottom: 0.8rem; }      /* Experience Rows */     .highlight-row {       display: flex;       align-items: flex-start;       gap: 1.5rem;       margin-bottom: 2rem;       background: #fff;       padding: 1rem 1.5rem;       border-radius: 12px;       box-shadow: 0 6px 18px rgba(0,0,0,0.08);       transition: transform 0.25s ease, box-shadow 0.25s ease;     }     .highlight-row:hover {       transform: translateY(-4px);       box-shadow: 0 12px 28px rgba(0,0,0,0.15);     }     .highlight-logo {       width: 80px;       height: 80px;       object-fit: contain;       border-radius: 12px;       background: #fff;       padding: 0.3rem;       box-shadow: 0 4px 12px rgba(0,0,0,0.1);       flex-shrink: 0;     }     .highlight-details ul { padding-left: 1.2rem; }      /* Grid for projects/blogs */     .project-grid, .blog-grid {       display: grid;       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));       gap: 1.5rem;       margin-top: 1rem;     }     .highlight-card, .project-card, .blog-card {       background: #fff;       padding: 1.4rem;       border-radius: 12px;       box-shadow: 0 6px 18px rgba(0,0,0,0.08);       transition: transform 0.25s ease, box-shadow 0.25s ease;     }     .highlight-card:hover, .project-card:hover, .blog-card:hover {       transform: translateY(-6px);       box-shadow: 0 12px 28px rgba(0,0,0,0.15);     }     .highlight-card a, .project-card a, .blog-card a {       color: #2563eb;       font-weight: 600;       text-decoration: none;     }     .highlight-card a:hover, .project-card a:hover, .blog-card a:hover { text-decoration: underline; }
 
-  <style>
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      background: #f8f9fa;
-      color: #333;
-      line-height: 1.6;
-    }
+     /* Achievements Section */
+     .achievements-grid {
+       display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+       gap: 1.2rem;
+       margin-top: 1rem;
+     }
+     .achievement-card {
+       background: #fff;
+       border-left: 5px solid #4b2e2e;
+       padding: 1.2rem 1.4rem;
+       border-radius: 10px;
+       box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+       transition: transform 0.25s ease, box-shadow 0.25s ease;
+     }
+     .achievement-card:hover {
+       transform: translateY(-4px);
+       box-shadow: 0 10px 24px rgba(0,0,0,0.13);
+     }
+     .achievement-card .badge {
+       display: inline-block;
+       background: #fff3cd;
+       color: #856404;
+       font-size: 0.75rem;
+       font-weight: 700;
+       padding: 0.2rem 0.6rem;
+       border-radius: 20px;
+       margin-bottom: 0.5rem;
+       letter-spacing: 0.04em;
+       text-transform: uppercase;
+     }
+     .achievement-card .badge.hackathon {
+       background: #d1e7dd;
+       color: #0a3622;
+     }
+     .achievement-card h3 {
+       font-size: 1rem;
+       margin: 0.3rem 0 0.5rem;
+     }
+     .achievement-card p {
+       font-size: 0.9rem;
+       color: #555;
+       margin: 0 0 0.6rem;
+     }
+     .achievement-card a {
+       color: #2563eb;
+       font-weight: 600;
+       font-size: 0.88rem;
+       text-decoration: none;
+     }
+     .achievement-card a:hover { text-decoration: underline; }
 
-    /* Header & Footer */
-    header, footer {
-      background: #fff8e7; /* Cream background */
-      color: #000; /* Text color black */
-      text-align: center;
-      padding: 4rem 1rem;
-    }
+     footer {        font-weight: 600;       padding: 1.5rem;     }      @media (max-width: 768px) {       .highlight-row {         flex-direction: column;         align-items: center;         text-align: center;       }       .highlight-logo {         margin-bottom: 1rem;       }     }      @media (max-width: 600px) {       h1 { font-size: 1.8rem; }       .headline { font-size: 1.05rem; }     }    </style> </head>  <body>  <header>   <img src="https://raw.githubusercontent.com/deepthivj-aiml/Resume/main/ChatGPT%20Image%20Jan%2022%2C%202026%2C%2002_28_33%20PM.png" alt="Deepthi VJ" class="profile-img">    <h1>Deepthi Venmanasseril Jainlal</h1>   <div class="headline">Engineering Intelligent Systems — From Data to Insights & Decisions</div>   <p>Data Scientist | ML Engineer | Software Engineer | AI Systems Builder</p>    <div class="links">     <a href="https://www.linkedin.com/in/deepthi-v-j-b06827105/" target="_blank">LinkedIn</a> |     <a href="https://github.com/deepthivj-aiml" target="_blank">GitHub</a> |     <a href="https://medium.com/@deepthivj96" target="_blank">Medium</a>   </div>    <a class="cta-btn" href="https://raw.githubusercontent.com/deepthivj-aiml/Resume/main/Deepthi_VJ_Resume.pdf" download="Deepthi_VJ_Resume.pdf">      Download Resume   </a> </header>  <div class="container">    <section>     <h2>About Me</h2>     <p>I am a Data Scientist and Software/Machine Learning Engineer with experience building real-world AI systems across Healthcare, Risk/Security, and Supply chain domains.</p>     <p>I work across the full ML lifecycle — from data preprocessing and model training to deployment and CI/CD integration — ensuring scalable and reliable ML solutions in production.</p>   </section>
 
-    header *, footer * {
-      color: #000; /* Force all nested text to black */
-    }
+   <!-- ACHIEVEMENTS SECTION -->
+   <section>
+     <h2>Achievements & Recognition</h2>
+     <div class="achievements-grid">
 
-    /* Profile Photo */
-    .profile-img {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      border: 4px solid #000; /* Border changed to black for contrast */
-      object-fit: cover;
-      margin-bottom: 1rem;
-    }
+       <div class="achievement-card">
+         <span class="badge hackathon">🏆 Hackathon</span>
+         <h3>Top 6 Finalist — Stanford × Google DeepMind Hackathon</h3>
+         <p>Selected as Top 6 Finalist at the Feb 1, 2025 Stanford × Google DeepMind Hackathon out of all competing teams. Built <strong>MedMat</strong> — a decision-support platform for New Product Development Engineers working on advanced medical devices.</p>
+       </div>
 
-    h1 { margin: 0.4rem 0; font-size: 2.4rem; color: #4b2e2e; } /* Dark brown */
-    h2 { color: #4b2e2e; border-bottom: 2px solid #4b2e2e; padding-bottom: 0.4rem; margin-bottom: 1.5rem; } /* Dark brown */
-    h3 { color: #4b2e2e; margin-top: 0; } /* Dark brown */
+       <div class="achievement-card">
+         <span class="badge">⭐ Ford Recognition</span>
+         <h3>Recognition for Excellence — Ford Motors</h3>
+         <p>Received Recognition for Excellence for significantly improving Lane Rate value accuracy, delivering measurable impact to Ford's supply chain and cost analysis operations.</p>
+       </div>
 
-    .headline { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.8rem; }
-    .links a {
-      color: #000; /* Header links black */
-      margin: 0 0.7rem;
-      font-weight: 600;
-      text-decoration: none;
-    }
-    .links a:hover { text-decoration: underline; }
+       <div class="achievement-card">
+         <span class="badge">🤝 Ford Recognition</span>
+         <h3>Recognition for Collaboration — Ford Motors</h3>
+         <p>Received Recognition for Collaboration for outstanding contributions to cross-functional teams, driving alignment and execution across engineering and data science workflows.</p>
+       </div>
 
-    .cta-btn {
-      display: inline-block;
-      margin-top: 1.4rem;
-      padding: 0.7rem 1.6rem;
-      background: #000; /* Black button background */
-      color: #fff; /* White text */
-      border-radius: 25px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .cta-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
+     </div>
+   </section>
 
-    .container { max-width: 1100px; margin: 3rem auto; padding: 0 1.2rem; }
-    section { margin-bottom: 3.5rem; }
-    ul { padding-left: 1.2rem; }
-    ul li { margin-bottom: 0.8rem; }
+   <section>     <h2>Experience & Highlights (4.6 years)</h2>      <div class="highlight-row">       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Ford_logo_flat.svg/250px-Ford_logo_flat.svg.png" alt="Ford Motors Logo" class="highlight-logo">       <div class="highlight-details">         <h3>Ford Motors</h3>         <ul>           <li>Developed dashboards and ML models resulting in $23M+ cost savings.</li>           <li>Lane Rate Estimation, Price Estimation, Supplier & Cost Analysis dashboards.</li>           <li>🏅 Recognition for Excellence — improved Lane Rate value accuracy.</li>           <li>🏅 Recognition for Collaboration — contributions to cross-functional teams.</li>           <li>Worked on end-to-end ML pipelines with CI/CD integration for production deployment.</li>           <li>Optimized inference speed, model memory usage, and automated reporting.</li>         </ul>       </div>     </div>      <div class="highlight-row">       <img src="https://www.fdnypro.org/wp-content/uploads/2024/05/phillips.jpg" alt="Philips Healthcare Logo" class="highlight-logo">       <div class="highlight-details">         <h3>Philips Healthcare</h3>         <ul>           <li>Developed patient monitoring software & simulators reducing testing complexity by 80%.</li>           <li>Implemented test automation projects reducing manual testing by 60%.</li>           <li>Performed risk analysis using ML algorithms and Monte Carlo simulation.</li>            <li>Implemented Semantic segmentation over fetal heart view plane ultra sound images using deep learning algorithms along with mask creation and image annotations which attained 84% accuracy.</li>         </ul>       </div>     </div>    </section>    <section>     <h2>Publications & Blogs</h2>     <div class="blog-grid">       <div class="blog-card">         <h3>Evaluating Sampling Efficiency in Bayesian Inference</h3>         <a href="https://medium.com/@deepthivj96/evaluating-sampling-efficiency-in-bayesian-inference-a-benchmark-of-random-walk-metropolis-vs-f85c34d1682b" target="_blank">Read on Medium →</a>       </div>       <div class="blog-card">         <h3>Hybrid Anomaly Detection with Autoencoders & XGBoost</h3>         <a href="https://medium.com/operations-research-bit/the-ultimate-guide-hybrid-anomaly-detection-with-autoencoders-xgboost-1a565bdc6710" target="_blank">Read on Medium →</a>       </div>       <div class="blog-card">         <h3>Solving Real Logistics Problems: Consolidation Center Optimizer</h3>         <a href="https://medium.com/operations-research-bit/solving-real-logistics-problems-building-a-consolidation-center-optimizer-in-python-7eaa2597e61d" target="_blank">Read on Medium →</a>       </div>     </div>   </section>    <section>     <h2>Projects</h2>     <div class="project-grid">
 
-    /* Experience Rows */
-    .highlight-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-      background: #fff;
-      padding: 1rem 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-    .highlight-row:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.15);
-    }
-    .highlight-logo {
-      width: 80px;
-      height: 80px;
-      object-fit: contain;
-      border-radius: 12px;
-      background: #fff;
-      padding: 0.3rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      flex-shrink: 0;
-    }
-    .highlight-details ul { padding-left: 1.2rem; }
+       <div class="project-card">
+         <h3>🏥 MedMat — Medical Device Material Decision Support</h3>
+         <p>Top 6 Finalist at Stanford × Google DeepMind Hackathon (Feb 2025). Built with Google AI Studio. Helps New Product Development Engineers select optimal medical device materials by evaluating FDA approval, EU regulatory compliance, and ASTM standards. Also assesses material availability, fabrication feasibility, contract manufacturer selection, and supply chain options. Auto-generates regulatory documentation (e.g., Safety Data Sheets).</p>
+         <a href="https://lnkd.in/gTKKutX5" target="_blank">Live App →</a>&nbsp;&nbsp;
+         <a href="https://lnkd.in/gnaz_8Et" target="_blank">GitHub →</a>
+       </div>
 
-    /* Grid for projects/blogs */
-    .project-grid, .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1rem;
-    }
-    .highlight-card, .project-card, .blog-card {
-      background: #fff;
-      padding: 1.4rem;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-    .highlight-card:hover, .project-card:hover, .blog-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.15);
-    }
-    .highlight-card a, .project-card a, .blog-card a {
-      color: #2563eb;
-      font-weight: 600;
-      text-decoration: none;
-    }
-    .highlight-card a:hover, .project-card a:hover, .blog-card a:hover { text-decoration: underline; }
-
-    footer { 
-      font-weight: 600;
-      padding: 1.5rem;
-    }
-
-    @media (max-width: 768px) {
-      .highlight-row {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      .highlight-logo {
-        margin-bottom: 1rem;
-      }
-    }
-
-    @media (max-width: 600px) {
-      h1 { font-size: 1.8rem; }
-      .headline { font-size: 1.05rem; }
-    }
-
-  </style>
-</head>
-
-<body>
-
-<header>
-  <img src="https://raw.githubusercontent.com/deepthivj-aiml/Resume/main/ChatGPT%20Image%20Jan%2022%2C%202026%2C%2002_28_33%20PM.png" alt="Deepthi VJ" class="profile-img">
-
-  <h1>Deepthi Venmanasseril Jainlal</h1>
-  <div class="headline">Engineering Intelligent Systems — From Data to Insights & Decisions</div>
-  <p>Data Scientist | ML Engineer | Software Engineer | AI Systems Builder</p>
-
-  <div class="links">
-    <a href="https://www.linkedin.com/in/deepthi-v-j-b06827105/" target="_blank">LinkedIn</a> |
-    <a href="https://github.com/deepthivj-aiml" target="_blank">GitHub</a> |
-    <a href="https://medium.com/@deepthivj96" target="_blank">Medium</a>
-  </div>
-
-  <a class="cta-btn" href="https://raw.githubusercontent.com/deepthivj-aiml/Resume/main/Deepthi_VJ_Resume.pdf" download="Deepthi_VJ_Resume.pdf">
-     Download Resume
-  </a>
-</header>
-
-<div class="container">
-
-  <section>
-    <h2>About Me</h2>
-    <p>I am a Data Scientist and Software/Machine Learning Engineer with experience building real-world AI systems across Healthcare, Risk/Security, and Supply chain domains.</p>
-    <p>I work across the full ML lifecycle — from data preprocessing and model training to deployment and CI/CD integration — ensuring scalable and reliable ML solutions in production.</p>
-  </section>
-
-  <section>
-    <h2>Experience & Highlights (4.6 years)</h2>
-
-    <div class="highlight-row">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Ford_logo_flat.svg/250px-Ford_logo_flat.svg.png" alt="Ford Motors Logo" class="highlight-logo">
-      <div class="highlight-details">
-        <h3>Ford Motors</h3>
-        <ul>
-          <li>Developed dashboards and ML models resulting in $23M+ cost savings.</li>
-          <li>Lane Rate Estimation, Price Estimation, Supplier & Cost Analysis dashboards.</li>
-          <li>Recognition for Excellence and Collaboration.</li>
-          <li>Worked on end-to-end ML pipelines with CI/CD integration for production deployment.</li>
-          <li>Optimized inference speed, model memory usage, and automated reporting.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="highlight-row">
-      <img src="https://www.fdnypro.org/wp-content/uploads/2024/05/phillips.jpg" alt="Philips Healthcare Logo" class="highlight-logo">
-      <div class="highlight-details">
-        <h3>Philips Healthcare</h3>
-        <ul>
-          <li>Developed patient monitoring software & simulators reducing testing complexity by 80%.</li>
-          <li>Implemented test automation projects reducing manual testing by 60%.</li>
-          <li>Performed risk analysis using ML algorithms and Monte Carlo simulation.</li>
-           <li>Implemented Semantic segmentation over fetal heart view plane ultra sound images using deep learning algorithms along with mask creation and image annotations which attained 84% accuracy.</li>
-        </ul>
-      </div>
-    </div>
-
-  </section>
-
-  <section>
-    <h2>Publications & Blogs</h2>
-    <div class="blog-grid">
-      <div class="blog-card">
-        <h3>Evaluating Sampling Efficiency in Bayesian Inference</h3>
-        <a href="https://medium.com/@deepthivj96/evaluating-sampling-efficiency-in-bayesian-inference-a-benchmark-of-random-walk-metropolis-vs-f85c34d1682b" target="_blank">Read on Medium →</a>
-      </div>
-      <div class="blog-card">
-        <h3>Hybrid Anomaly Detection with Autoencoders & XGBoost</h3>
-        <a href="https://medium.com/operations-research-bit/the-ultimate-guide-hybrid-anomaly-detection-with-autoencoders-xgboost-1a565bdc6710" target="_blank">Read on Medium →</a>
-      </div>
-      <div class="blog-card">
-        <h3>Solving Real Logistics Problems: Consolidation Center Optimizer</h3>
-        <a href="https://medium.com/operations-research-bit/solving-real-logistics-problems-building-a-consolidation-center-optimizer-in-python-7eaa2597e61d" target="_blank">Read on Medium →</a>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Projects</h2>
-    <div class="project-grid">
-      <div class="project-card">
-        <h3>Used car inspecting AI Agents (Google)</h3>
-        <p>Built autonomous LLM-powered agents with reasoning, planning, and tool usage.</p>
-        <a href="https://github.com/deepthivj-aiml/5-Day-AI-Agents-Intensive-course-Google" target="_blank">GitHub →</a>
-      </div>
-      <div class="project-card">
-        <h3>Supply Chain Optimization</h3>
-        <p>Optimized consolidation centers using Gurobi to minimize logistics costs in supply chains.</p>
-        <a href="https://github.com/deepthivj-aiml/Mathematical-Optimization/blob/main/Consolidation_Center_optimization_supply_Chain_gurobi.ipynb" target="_blank">GitHub →</a>
-      </div>
-      <div class="project-card">
-        <h3>Urban Sound Classification</h3>
-        <p>Deep learning model to classify real-world environmental sounds for smart city applications.</p>
-        <a href="https://github.com/deepthivj-aiml/Projects-ML/blob/master/Urban_Sound_Classification.ipynb" target="_blank">GitHub →</a>
-      </div>
-      <div class="project-card">
-        <h3>Emotion-Based Music Player</h3>
-        <p>Computer vision system that recommends music based on facial emotions in real-time.</p>
-        <a href="https://github.com/deepthivj-aiml/Projects-ML/blob/master/FACEEMOTIONBASEDMUSICPLAYER.ipynb" target="_blank">GitHub →</a>
-      </div>
-      <div class="project-card">
-        <h3>COVID Probability Prediction</h3>
-        <p>ML model to estimate COVID-19 infection probability from symptoms.</p>
-        <a href="https://github.com/deepthivj-aiml/hackethon/blob/master/corona-probability-prediction.ipynb" target="_blank">GitHub →</a>
-      </div>
-      <div class="project-card">
-        <h3>Video Anomaly Detection</h3>
-        <p>Deep learning-based surveillance anomaly detection system for security applications.</p>
-        <a href="https://github.com/deepthivj-aiml/Video-Anomaly-Detection" target="_blank">GitHub →</a>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Contact</h2>
-    <p><strong>Email (Personal):</strong> deepthivj96@gmail.com</p>
-    <p><strong>Academic Email:</strong> d.venmanasseriljainlal.1104@westcliff.edu</p>
-    <p><strong>Phone:</strong> +1 (805)514 0126</p>
-  </section>
-
-</div>
-
-<footer>
-  © 2026 Deepthi VJ | Built with ❤️ & AI
-</footer>
-
-</body>
-</html>
+       <div class="project-card">         <h3>Used car inspecting AI Agents (Google)</h3>         <p>Built autonomous LLM-powered agents with reasoning, planning, and tool usage.</p>         <a href="https://github.com/deepthivj-aiml/5-Day-AI-Agents-Intensive-course-Google" target="_blank">GitHub →</a>       </div>       <div class="project-card">         <h3>Supply Chain Optimization</h3>         <p>Optimized consolidation centers using Gurobi to minimize logistics costs in supply chains.</p>         <a href="https://github.com/deepthivj-aiml/Mathematical-Optimization/blob/main/Consolidation_Center_optimization_supply_Chain_gurobi.ipynb" target="_blank">GitHub →</a>       </div>       <div class="project-card">         <h3>Urban Sound Classification</h3>         <p>Deep learning model to classify real-world environmental sounds for smart city applications.</p>         <a href="https://github.com/deepthivj-aiml/Projects-ML/blob/master/Urban_Sound_Classification.ipynb" target="_blank">GitHub →</a>       </div>       <div class="project-card">         <h3>Emotion-Based Music Player</h3>         <p>Computer vision system that recommends music based on facial emotions in real-time.</p>         <a href="https://github.com/deepthivj-aiml/Projects-ML/blob/master/FACEEMOTIONBASEDMUSICPLAYER.ipynb" target="_blank">GitHub →</a>       </div>       <div class="project-card">         <h3>COVID Probability Prediction</h3>         <p>ML model to estimate COVID-19 infection probability from symptoms.</p>         <a href="https://github.com/deepthivj-aiml/hackethon/blob/master/corona-probability-prediction.ipynb" target="_blank">GitHub →</a>       </div>       <div class="project-card">         <h3>Video Anomaly Detection</h3>         <p>Deep learning-based surveillance anomaly detection system for security applications.</p>         <a href="https://github.com/deepthivj-aiml/Video-Anomaly-Detection" target="_blank">GitHub →</a>       </div>     </div>   </section>    <section>     <h2>Contact</h2>     <p><strong>Email (Personal):</strong> deepthivj96@gmail.com</p>     <p><strong>Academic Email:</strong> d.venmanasseriljainlal.1104@westcliff.edu</p>     <p><strong>Phone:</strong> +1 (805)514 0126</p>   </section>  </div>  <footer>   © 2026 Deepthi VJ | Built with ❤️ & AI </footer>  </body> </html>
